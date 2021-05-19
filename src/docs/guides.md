@@ -6,11 +6,9 @@ tags:
   - docs
 ogTitle: "Harold Guides - Static sites generator"
 ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 ogUrl: "https://www.haroldjs.com/docs/guides"
 twitterTitle: "Harold Guides - Static sites generator"
 twitterDescription: "RHarold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 twitterUrl: "https://www.haroldjs.com/docs/guides"
 ---
 
@@ -136,11 +134,9 @@ You can also use partials with parameters. For example we can use `head` partial
   description="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
   ogTitle="Harold - Static sites generator"
   ogDescription="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
-  ogImage="https://www.haroldjs.com/assets/images/harold-start.png"
   ogUrl="https://www.haroldjs.com"
   twitterTitle="Harold - Static sites generator"
   twitterDescription="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
-  twitterImage="https://www.haroldjs.com/assets/images/harold-start.png"
   twitterUrl="https://www.haroldjs.com"
 }}
 ```

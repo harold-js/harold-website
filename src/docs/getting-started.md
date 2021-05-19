@@ -6,11 +6,9 @@ tags:
   - docs
 ogTitle: "Harold Getting Started - Static sites generator"
 ogDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 ogUrl: "https://www.haroldjs.com/docs/getting-started"
 twitterTitle: "Harold Getting Started - Static sites generator"
 twitterDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 twitterUrl: "https://www.haroldjs.com/docs/getting-started"
 ---
 

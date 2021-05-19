@@ -6,11 +6,9 @@ tags:
   - learn
 ogTitle: "Harold Recipes - Static sites generator"
 ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
-ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 ogUrl: "https://www.haroldjs.com/docs/recipes"
 twitterTitle: "Harold Recipes - Static sites generator"
 twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
-twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 twitterUrl: "https://www.haroldjs.com/docs/recipes"
 ---
 
