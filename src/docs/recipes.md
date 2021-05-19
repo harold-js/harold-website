@@ -1,0 +1,195 @@
+---
+layout: 'docs'
+title: 'Recipes'
+publicationDate: '2021-05-01'
+tags:
+  - learn
+ogTitle: "Harold Recipes - Static sites generator"
+ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
+ogUrl: "https://www.haroldjs.com/docs/recipes"
+twitterTitle: "Harold Recipes - Static sites generator"
+twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
+twitterUrl: "https://www.haroldjs.com/docs/recipes"
+---
+
+Below are ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template.
+
+## Featured post
+
+You can use `postsList` Handlebars helper with `perPageLimit` param set to 1. Then you can provide your wrapper `className` and style it as you need.
+
+```handlebars
+{{postsList
+  perPageLimit=1
+  currentPage=1
+  className="homepage-featured-post"
+  dateFormat="dd mmmm yyyy"
+  noTags=true
+  noExcerpt=true
+  noDate=true
+  byTagName="featured"
+  readMoreButtonLabel="Lets dive in!"
+}}
+```
+
+## Posts categories
+
+You can use `postsList` Handlebars helper with `perPageLimit` param. You can use tags as categories. Posts will be divided into sections and listed by tag name.
+
+```handlebars
+<div class="homepage-section homepage-section-bg">
+  <div class="container">
+    <h1 class="homepage-header">Coding</h1>
+    {{postsList
+    perPageLimit=3
+    currentPage=1
+    className="post-list-items"
+    dateFormat="dd mmmm yyyy"
+    byTagName="coding"
+    readMoreButtonLabel="&#8674;"
+    }}
+  </div>
+</div>
+
+<div class="homepage-section">
+  <div class="container">
+    <h1 class="homepage-header">Art and Design</h1>
+    {{postsList
+    perPageLimit=3
+    currentPage=1
+    className="post-list-items"
+    dateFormat="dd mmmm yyyy"
+    byTagName="art"
+    readMoreButtonLabel="&#8674;"
+    }}
+  </div>
+</div>
+```
+
+More examples on [GitHub](https://github.com/juliancwirko/create-harold-app/tree/master/templates/default)
+
+## Simple posts list
+
+You can use the `postsList` Handlebars helper with disabled most of its contents to achieve a simple posts list that can generate menus.
+
+```handlebars
+{{postsList
+  className="docs-articles-list"
+  noTags=true
+  noExcerpt=true
+  noDate=true
+  noReadMoreButton=true
+  byTagName='docs'
+}}
+```
+
+This documentation uses this approach to generate left sidebar menus.
+
+## Similar posts
+
+You can use the `postsList` with `byTagName`, which you should set up the same as the current post tag or tags. This way, you will be able to display a similar posts list. Remember to do this in the layout hbs file, not in Markdown files.
+
+
+```handlebars
+{{postsList
+  className="docs-articles-list"
+  byTagName=tags.[0]
+}}
+```
+
+## Set OG tags
+
+You can do this for pages and also in Markdown files for blog/docs posts.
+
+```handlebars
+{{> head
+  title="Homepage"
+  description="Harold app default theme"
+  ogTitle="Harold Homepage"
+  ogDescription="Harold Description"
+  ogImage=""
+  twitterTitle="Harold Homepage"
+  twitterDescription="Harold Description"
+  twitterImage=""
+}}
+```
+
+```bash
+---
+layout: 'blog-post'
+title: 'Harold is alive!'
+excerpt: "Excerpt of the featured example post."
+coverImage: 'https://picsum.photos/id/82/1500/600'
+tags:
+  - tag7
+  - featured
+publicationDate: '2021-04-18'
+ogTitle: 'Harold is alive!'
+ogDescription: 'Harold is a static site generator based on Handlebars templating system and markdown'
+ogUrl: 'https://my-website.com/blog/doc1'
+ogImage: 'https://my-website.com/assets/images/ogImage.png'
+twitterTitle: 'Harold is alive!'
+twitterDescription: 'Harold is a static site generator based on Handlebars templating system and markdown'
+twitterUrl: 'https://my-website.com/blog/doc1'
+twitterImage: 'https://my-website.com/assets/images/ogImage.png'
+---
+```
+
+More examples on [GitHub](https://github.com/juliancwirko/create-harold-app/tree/master/templates/default)
+
+## Posts JSON data
+
+By default, you have access to JSON data with all posts. It is useful when you want to do something dynamic using JavaScript. For example, 'load more' functionality or search. The search system is implemented already in the default template. Here is an example:  
+
+```javascript
+const postsJsonDataPath = '/jsonData/posts.json';
+
+const fetchPostsJsonData = () => {
+  return fetch(postsJsonDataPath)
+    .then((response) => response.json())
+    .then((data) => {
+      postsJSON = data;
+      return data;
+    });
+};
+
+fetchPostsJsonData().then((data) => {
+  searchIndex = lunr(function () {
+    this.ref('fileName');
+    this.field('title');
+    this.field('body');
+    this.field('excerpt');
+    this.field('tags');
+    data.forEach((doc) => {
+      this.add(
+        Object.assign(doc, {
+          tags: doc.tags.join(' '),
+          body: doc.body.replace(/(<([^>]+)>)/gi, ''),
+        })
+      );
+    }, this);
+  });
+});
+```
+
+More examples on [GitHub](https://github.com/juliancwirko/create-harold-app/tree/master/templates/default/assets/js)
+
+## Custom directories names
+
+Sometimes you don't want to build a blog, but let's say, documentation. There is a `posts` directory for Markdown files and a `blog-layouts` directory for layouts by default. Because URLs are using `posts` directory name, you will end with `/posts/my-documentation-article-1`, which isn't optimal. You can change it by using the `.haroldrc` configuration file. Example:
+
+```bash
+{
+  mdFilesDirName: 'docs',
+  mdFilesLayoutsDirName: 'docs-layouts'
+}
+
+```
+
+## Other ideas?
+
+I would be thrilled if you could share your ideas. Let me know.
+
+Please read [Guides](/docs/guides) section if you need more detailed docs.

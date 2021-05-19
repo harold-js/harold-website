@@ -1,0 +1,15 @@
+{
+  "name": "harold-website",
+  "version": "0.0.1",
+  "description": "harold-website",
+  "main": "index.js",
+  "scripts": {
+    "build": "harold-scripts build",
+    "start": "harold-scripts start",
+    "lint": "eslint -c .eslintrc . --fix",
+    "prettier": "prettier --write '**/*.{js,json}'"
+  },
+  "devDependencies": {
+    "harold-scripts": "^0.3.2"
+  }
+}
