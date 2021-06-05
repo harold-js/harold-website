@@ -4,11 +4,11 @@ title: 'Guides'
 publicationDate: '2021-05-01'
 tags:
   - docs
-ogTitle: "Harold Guides - Static sites generator"
+ogTitle: "Harold Guides - Static site generator"
 ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
 ogUrl: "https://www.haroldjs.com/docs/guides"
-twitterTitle: "Harold Guides - Static sites generator"
-twitterDescription: "RHarold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
+twitterTitle: "Harold Guides - Static site generator"
+twitterDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
 twitterUrl: "https://www.haroldjs.com/docs/guides"
 ---
 
@@ -130,12 +130,12 @@ You can also use partials with parameters. For example we can use `head` partial
 
 ```handlebars
 {{> head
-  title="Harold - Static sites generator"
+  title="Harold - Static site generator"
   description="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
-  ogTitle="Harold - Static sites generator"
+  ogTitle="Harold - Static site generator"
   ogDescription="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
   ogUrl="https://www.haroldjs.com"
-  twitterTitle="Harold - Static sites generator"
+  twitterTitle="Harold - Static site generator"
   twitterDescription="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
   twitterUrl="https://www.haroldjs.com"
 }}
@@ -180,11 +180,11 @@ title: 'Recipes'
 publicationDate: '2021-05-01'
 tags:
   - learn
-ogTitle: "Harold Recipes - Static sites generator"
+ogTitle: "Harold Recipes - Static site generator"
 ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
 ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 ogUrl: "https://www.haroldjs.com/docs/recipes"
-twitterTitle: "Harold Recipes - Static sites generator"
+twitterTitle: "Harold Recipes - Static site generator"
 twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
 twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
 twitterUrl: "https://www.haroldjs.com/docs/recipes"
@@ -273,6 +273,24 @@ This helper is very powerful when it comes to building post lists. It has a very
 - `noImage` - hide preview image (Default: false)
 - `dateFormat` - define publication date format (Default: 'yyyy-mm-dd')
 
+**relativePath**
+
+```handlebars
+{{relativePath 'about.html'}}
+{{relativePath 'assets/images/image.png'}}
+{{relativePath 'styles/style.css'}}
+```
+
+I would recommend always using this helper in .hbs files. Of course, if you are well aware of your paths, you can omit that. In Scss and Markdown files, you still need to use standard paths, if needed, relative ones. It will probably change in the future.
+
+**hostDirName**
+
+```handlebars
+{{hostDirName}}
+```
+
+It will return the previously defined subdirectory name in which the whole website is hosted. It is sometimes useful when you would like to get this name in your templates dynamically. In the default template, it is used to provide proper paths for the template's JavaScript logic. You probably won't need to use it much unless you write your own Harold template for many different projects.
+
 There isn't a possibility to add custom Handlebars helpers, but it is in plans in the future.
 
 ## SCSS files
@@ -314,6 +332,10 @@ See example of assets directory here: [https://github.com/juliancwirko/create-ha
 ## Posts JSON data
 
 There is a special `posts.json` file located in the `jsonData` directory. It will be populated on every markdown file change, keeps data about all posts in JSON format. This file is quite essential because the whole search engine uses it. It is its primary purpose in the Default theme, but you can use it for many other use cases. For example, for loading some posts dynamically or creating `load more` functionality. It could have many different use cases.
+
+## Host from a subdirectory
+
+Suppose you need to host your blog created using Harold from subdirectory. For example, `www.mywebsite.com/blog/` then you would need to configure `hostDirName` in the `.haroldrc` file. Add there the name of your subfolder. The second thing is that you need to be aware of your paths (posts links, images, styles, etc.). The default Harold's templates support relative paths by default. It uses the `relativePath` handlebars helper for that. So it should work well in both cases when hosted from root and subdirectory.
 
 
 [Next: Recipes](/docs/recipes)

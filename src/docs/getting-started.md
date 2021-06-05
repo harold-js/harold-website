@@ -4,10 +4,10 @@ title: 'Getting Started'
 publicationDate: '2021-05-01'
 tags:
   - docs
-ogTitle: "Harold Getting Started - Static sites generator"
+ogTitle: "Harold Getting Started - Static site generator"
 ogDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
 ogUrl: "https://www.haroldjs.com/docs/getting-started"
-twitterTitle: "Harold Getting Started - Static sites generator"
+twitterTitle: "Harold Getting Started - Static site generator"
 twitterDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
 twitterUrl: "https://www.haroldjs.com/docs/getting-started"
 ---
@@ -75,12 +75,16 @@ Harold will search up the directory tree for configuration in the following plac
 
 For now, there isn't much to configure, but you can configure the directory for md files (by default `posts`) and the directory for md files layouts (by default `blog-layouts`). Quite helpful because these names are also used in urls. For example, by default, `/posts/name-of-the-post` (name of the .md file), but you might want to build the docs website and have `/docs/name-of-the-doc` (name of the .md file).
 
+You can also configure the name for output directory using `outputDirName` and if you want to host your site in subdirectory you would also need to add `hostDirName`.
+
 Example of `.haroldrc` (placed in the root of your harold app):
 
 ```
 {
   mdFilesDirName: 'docs',
-  mdFilesLayoutsDirName: 'docs-layouts'
+  mdFilesLayoutsDirName: 'docs-layouts',
+  outputDirName: 'dist',
+  hostDirName: 'subfolder-name'
 }
 ```
 

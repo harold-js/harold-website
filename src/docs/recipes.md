@@ -1,13 +1,13 @@
 ---
 layout: 'docs'
 title: 'Recipes'
-publicationDate: '2021-05-01'
+publicationDate: '2021-05-02'
 tags:
   - learn
-ogTitle: "Harold Recipes - Static sites generator"
+ogTitle: "Harold Recipes - Static site generator"
 ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
 ogUrl: "https://www.haroldjs.com/docs/recipes"
-twitterTitle: "Harold Recipes - Static sites generator"
+twitterTitle: "Harold Recipes - Static site generator"
 twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
 twitterUrl: "https://www.haroldjs.com/docs/recipes"
 ---
@@ -185,6 +185,31 @@ Sometimes you don't want to build a blog, but let's say, documentation. There is
 }
 
 ```
+
+## Github Pages hosting
+
+If you want to host Harold's website under your main username (username.github.io), you would need to rename your output directory to supported by Github. It is the `docs` directory. You would need to create a `.haroldrc` file and put the output directory name there.
+
+```bash
+{
+  outputDirName: 'docs',
+}
+```
+
+Build your Harold app and push it to the repo. Remember to add the `.gitignore` file, and exclude `node_modules` but keep the output directory (`docs`).
+
+Configure  your Github Pages to take the source from the `docs` directory.
+
+If you want to host Harold's website under the repository subdirectory name (username.github.io/my-blog), you need to add `hostDirName` and remember to keep your paths in order. You can use the `relativePath` handlebars helper. The default template (from v0.4.0) is already using it, so it should work as-is.
+
+```bash
+{
+  outputDirName: 'docs',
+  hostDirName: 'my-blog'
+}
+```
+
+Check out demo: [github.com/juliancwirko/testing-github-pages](https://github.com/juliancwirko/testing-github-pages)
 
 ## Other ideas?
 
