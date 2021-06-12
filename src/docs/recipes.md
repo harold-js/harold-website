@@ -211,6 +211,16 @@ If you want to host Harold's website under the repository subdirectory name (use
 
 Check out demo: [github.com/juliancwirko/testing-github-pages](https://github.com/juliancwirko/testing-github-pages)
 
+## Netlify hosting
+
+With Netlify, it is a little bit simpler. You just need to point to the Git branch and directory you want to deploy your site. You don't even need the source in the repo because Netlify will run the build scripts for you.
+
+Here is the quick walk-through demo on how to do that.
+
+<div class="embeded-media-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZjeYgAgiHRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Other ideas?
 
 I would be thrilled if you could share your ideas. Let me know.

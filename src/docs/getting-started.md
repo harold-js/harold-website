@@ -14,7 +14,18 @@ twitterUrl: "https://www.haroldjs.com/docs/getting-started"
 
 Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites.
 
-**Below you can watch and read about configuration and examples.**
+## Templates demo
+
+Check out the demo of predefined templates, which you can use:
+
+<ul>
+  <li><a href="https://cocky-leakey-9ad1bc.netlify.app/">Default template</a></li>
+  <li><a href="https://elegant-volhard-48a4d1.netlify.app/">Bare template</a></li>
+</ul>
+
+## Walk-through video
+
+Below you can watch a quick walk-through video:
 
 <div class="embeded-media-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/DG0T1Fg0mq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
