@@ -200,6 +200,12 @@ Build your Harold app and push it to the repo. Remember to add the `.gitignore` 
 
 Configure  your Github Pages to take the source from the `docs` directory.
 
+Here is the quick walk-through demo on how to do that:
+
+<div class="embeded-media-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VjCWn3qeZnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 If you want to host Harold's website under the repository subdirectory name (username.github.io/my-blog), you need to add `hostDirName` and remember to keep your paths in order. You can use the `relativePath` handlebars helper. The default template (from v0.4.0) is already using it, so it should work as-is.
 
 ```bash
@@ -215,7 +221,7 @@ Check out demo: [github.com/juliancwirko/testing-github-pages](https://github.co
 
 With Netlify, it is a little bit simpler. You just need to point to the Git branch and directory you want to deploy your site. You don't even need the source in the repo because Netlify will run the build scripts for you.
 
-Here is the quick walk-through demo on how to do that.
+Here is the quick walk-through demo on how to do that:
 
 <div class="embeded-media-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ZjeYgAgiHRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
