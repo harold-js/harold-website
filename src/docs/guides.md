@@ -327,7 +327,7 @@ Always refer to these files using absolute paths.
 <img src="/assets/images/img.png" />
 ```
 
-See example of assets directory here: [https://github.com/juliancwirko/create-harold-app/tree/master/templates/default/assets](https://github.com/juliancwirko/create-harold-app/tree/master/templates/default/assets).
+See example of assets directory [here](https://github.com/juliancwirko/harold-template-default/tree/main/assets).
 
 ## Posts JSON data
 
