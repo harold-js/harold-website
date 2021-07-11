@@ -36,7 +36,6 @@ const harold = (function () {
 
   // Search function
   const search = (phrase) => {
-    console.log(searchIndex);
     if (searchIndex) {
       const searchResults = searchIndex.search(phrase);
       const refs = searchResults.map((result) => result.ref);

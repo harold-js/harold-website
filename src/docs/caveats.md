@@ -26,13 +26,7 @@ You can change the names of directories using `.haroldrc` config. See the guides
 
 ## Support for multiple languages
 
-There is no a simple possibility to have multiple language blogs. When nesting directories are available, I think it will be more straightforward. The quickest solution would be to host two separate instances in subfolders of the main website. Like for example `www.myhost.com/en`. 
-
-## Custom templates
-
-Harold gives you two templates. They are in the same repository as `create-harold-app`. In the future, the plans are to extract them into separate repositories and provide a possibility to initialize projects even with custom templates from different git repositories.
-
-Of course, it is not a big problem even now because you can still change pretty much anything in there after project initialization.
+There is no a simple possibility to have multiple language blogs. When nesting directories are available, I think it will be more straightforward. The quickest solution would be to host two separate instances in subfolders of the main website. Like for example `www.myhost.com/en`.
 
 ## Scss, PostCSS and Handlebars customization
 

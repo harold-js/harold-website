@@ -20,6 +20,7 @@ Check out the demo of predefined templates, which you can use:
 
 <ul>
   <li><a href="https://cocky-leakey-9ad1bc.netlify.app/">Default template</a></li>
+  <li><a href="https://hardcore-curie-8f1ce0.netlify.app/">Docs template</a></li>
   <li><a href="https://elegant-volhard-48a4d1.netlify.app/">Bare template</a></li>
 </ul>
 
@@ -63,9 +64,10 @@ Inside that directory, it will generate the initial project structure and instal
 
 As an option, you can choose with which template it should init the project. Possible choices:
 - default
+- docs
 - bare
 
-If you want to init the project with `bare` template, pass additional option `-t bare`. For example: `npm init harold-app my-app -t bare` or with npm 7+ `npm init harold-app my-app -- -t bare`
+If you want to init the project with `docs` template, pass additional option `-t docs`. For example: `npm init harold-app my-app -t docs` or with npm 7+ `npm init harold-app my-app -- -t docs`. The same for `bare` template.
 
 In the future, there will be a possibility to pass custom templates.
 
