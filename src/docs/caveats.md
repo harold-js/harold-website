@@ -6,10 +6,10 @@ tags:
   - learn
 ogTitle: "Harold Caveats - Static site generator"
 ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-ogUrl: "https://www.haroldjs.com/docs/caveats"
+ogUrl: "https://www.haroldjs.com/docs/caveats.html"
 twitterTitle: "Harold Caveats - Static site generator"
 twitterDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-twitterUrl: "https://www.haroldjs.com/docs/caveats"
+twitterUrl: "https://www.haroldjs.com/docs/caveats.html"
 ---
 
 There are some limitations when using Harold. Hopefully, we solve most of them over time.

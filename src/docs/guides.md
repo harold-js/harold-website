@@ -6,13 +6,13 @@ tags:
   - docs
 ogTitle: "Harold Guides - Static site generator"
 ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-ogUrl: "https://www.haroldjs.com/docs/guides"
+ogUrl: "https://www.haroldjs.com/docs/guides.html"
 twitterTitle: "Harold Guides - Static site generator"
 twitterDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-twitterUrl: "https://www.haroldjs.com/docs/guides"
+twitterUrl: "https://www.haroldjs.com/docs/guides.html"
 ---
 
-Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how it is built. Be sure to check [Getting started](/docs/getting-started) section first.
+Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how it is built. Be sure to check [Getting started](/docs/getting-started.html) section first.
 
 ## Workflow
 
@@ -338,4 +338,4 @@ There is a special `posts.json` file located in the `jsonData` directory. It wil
 Suppose you need to host your blog created using Harold from subdirectory. For example, `www.mywebsite.com/blog/` then you would need to configure `hostDirName` in the `.haroldrc` file. Add there the name of your subfolder. The second thing is that you need to be aware of your paths (posts links, images, styles, etc.). The default Harold's templates support relative paths by default. It uses the `relativePath` handlebars helper for that. So it should work well in both cases when hosted from root and subdirectory.
 
 
-[Next: Recipes](/docs/recipes)
+[Next: Recipes](/docs/recipes.html)

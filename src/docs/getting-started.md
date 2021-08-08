@@ -6,10 +6,10 @@ tags:
   - docs
 ogTitle: "Harold Getting Started - Static site generator"
 ogDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-ogUrl: "https://www.haroldjs.com/docs/getting-started"
+ogUrl: "https://www.haroldjs.com/docs/getting-started.html"
 twitterTitle: "Harold Getting Started - Static site generator"
 twitterDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-twitterUrl: "https://www.haroldjs.com/docs/getting-started"
+twitterUrl: "https://www.haroldjs.com/docs/getting-started.html"
 ---
 
 Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites.
@@ -117,4 +117,4 @@ You don't have to think about it much. Create Harold App will install it when in
 2. In your project, update the version of `harold-scripts` package
 
 
-[Next: Guides](/docs/guides)
+[Next: Guides](/docs/guides.html)

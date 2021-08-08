@@ -231,6 +231,6 @@ Here is the quick walk-through demo on how to do that:
 
 I would be thrilled if you could share your ideas. Let me know.
 
-Please read [Guides](/docs/guides) section if you need more detailed docs.
+Please read [Guides](/docs/guides.html) section if you need more detailed docs.
 
-[Next: Caveats](/docs/caveats)
+[Next: Caveats](/docs/caveats.html)
