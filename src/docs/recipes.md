@@ -1,15 +1,12 @@
 ---
 layout: 'docs'
 title: 'Recipes'
+description: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+metaTitle: "Harold Recipes - Static site generator"
+metaUrl: "https://www.haroldjs.com/docs/recipes.html"
 publicationDate: '2021-05-02'
 tags:
   - learn
-ogTitle: "Harold Recipes - Static site generator"
-ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
-ogUrl: "https://www.haroldjs.com/docs/recipes"
-twitterTitle: "Harold Recipes - Static site generator"
-twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
-twitterUrl: "https://www.haroldjs.com/docs/recipes"
 ---
 
 Below are ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template.

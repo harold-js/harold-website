@@ -1,15 +1,12 @@
 ---
 layout: 'docs'
 title: 'Getting Started'
+description: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
+metaTitle: "Harold Getting Started - Static site generator"
+metaUrl: "https://www.haroldjs.com/docs/getting-started.html"
 publicationDate: '2021-05-01'
 tags:
   - docs
-ogTitle: "Harold Getting Started - Static site generator"
-ogDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-ogUrl: "https://www.haroldjs.com/docs/getting-started.html"
-twitterTitle: "Harold Getting Started - Static site generator"
-twitterDescription: "Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites."
-twitterUrl: "https://www.haroldjs.com/docs/getting-started.html"
 ---
 
 Harold is a static site generator that can help quickly set up websites, blogs, documentation sites, and other simple static websites.

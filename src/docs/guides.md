@@ -1,15 +1,12 @@
 ---
 layout: 'docs'
 title: 'Guides'
+description: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
+metaTitle: "Harold Guides - Static site generator"
+metaUrl: "https://www.haroldjs.com/docs/guides.html"
 publicationDate: '2021-05-01'
 tags:
   - docs
-ogTitle: "Harold Guides - Static site generator"
-ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-ogUrl: "https://www.haroldjs.com/docs/guides.html"
-twitterTitle: "Harold Guides - Static site generator"
-twitterDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-twitterUrl: "https://www.haroldjs.com/docs/guides.html"
 ---
 
 Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how it is built. Be sure to check [Getting started](/docs/getting-started.html) section first.

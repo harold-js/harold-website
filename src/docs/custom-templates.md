@@ -1,15 +1,12 @@
 ---
 layout: 'docs'
 title: 'Custom templates'
+description: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
+metaTitle: "Harold Custom Templates - Static site generator"
+metaUrl: "https://www.haroldjs.com/docs/custom-templates.html"
 publicationDate: '2021-04-29'
 tags:
   - docs
-ogTitle: "Harold Custom Templates - Static site generator"
-ogDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-ogUrl: "https://www.haroldjs.com/docs/custom-templates.html"
-twitterTitle: "Harold Custom Templates - Static site generator"
-twitterDescription: "Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how to use it."
-twitterUrl: "https://www.haroldjs.com/docs/custom-templates.html"
 ---
 
 From version 0.7.0, Harold allows passing the custom template when initializing a new project. The template should be archived and has the proper structure.
