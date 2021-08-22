@@ -10,6 +10,7 @@
     const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
     const sidebarRight = document.querySelector('[data-js-doc-sidebar-right]');
     const sidebarLeftActiveMenuItemClass = 'js-sidebar-left-menu-active';
+    const leftMenuItemClass = 'docs-articles-list--title';
 
     const slugify = function (string) {
       return encodeURIComponent(string.trim().toLowerCase().replace(/ /g, '-'));
@@ -98,6 +99,19 @@
             ticking = false;
           });
           ticking = true;
+        }
+      });
+
+      // Highlight left menu item
+      const locationPathName = window.location.pathname;
+      const leftMenuItems = document.querySelectorAll('.' + leftMenuItemClass);
+      leftMenuItems.forEach(function (leftMenuItem) {
+        if (
+          locationPathName.includes(
+            leftMenuItem.innerText.toLowerCase().replace(/\s+/g, '-')
+          )
+        ) {
+          leftMenuItem.classList.add('js-selected-menu-item');
         }
       });
     }

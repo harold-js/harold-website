@@ -183,6 +183,10 @@ Sometimes you don't want to build a blog, but let's say, documentation. There is
 
 ```
 
+## Adding robots.txt, manifest.json, and any other statics
+
+In many cases, there is a need to add some custom files to the root of your website. You can do this using the optional `src/statics` directory. Example: `src/statics/robots.txt` will be placed in `build/robots.txt` next to your index.html file. You can also nest your directories like `src/statics/some-dir/some-dir/file.txt`. It will land in `build/some-dir/some-dir/file.txt`.
+
 ## Github Pages hosting
 
 If you want to host Harold's website under your main username (username.github.io), you would need to rename your output directory to supported by Github. It is the `docs` directory. You would need to create a `.haroldrc` file and put the output directory name there.

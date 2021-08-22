@@ -192,3 +192,14 @@
     }
   }
 }
+
+.js-selected-menu-item {
+  font-weight: 500;
+  position: relative;
+
+  &:after {
+    content: "\27A4";
+    position: absolute;
+    right: 0;
+  }
+}

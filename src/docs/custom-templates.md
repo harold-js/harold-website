@@ -77,3 +77,5 @@ https://github.com/juliancwirko/harold-template-scaffold/archive/refs/heads/main
 ```
 
 You can always download the zip file and initialize the Harold project using the local file path.
+
+[Next: Guides](/docs/guides.html)

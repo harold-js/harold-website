@@ -59,6 +59,7 @@ Below is the `src` directory structure from the Default template:
 │   ├── example5.md
 │   ├── example6.md
 │   └── harold-intro.md
+└── statics (optional)
 └── styles
     ├── _basic.scss
     ├── _homepage.scss
@@ -76,6 +77,8 @@ Below is the `src` directory structure from the Default template:
 `posts` and `pages` are places for actual content. You write pages with Handlebars markup and posts with Markdown.
 
 `blog-layouts` is a place for all custom blog layouts. You can then point particular layout to use in the Markdown file.
+
+`statics` is a place for all custom static files that you would want to copy to the 'build' directory, such as robots.txt, manifest.json, etc. They will land in the root. If you wish, you can also nest directories there.
 
 All compiles and lands in the `build` directory:
 
@@ -211,10 +214,12 @@ Another predefined structure will be helpful when you need to embed some iframe-
 
 ```html
 <div class="embeded-media-container">
-  <iframe height="224" style="width: 100%;" scrolling="no" title="Confirmation Button" src="https://codepen.io/rubenasanchez/embed/preview/mdRqqbN?height=224&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href='https://codepen.io/rubenasanchez/pen/mdRqqbN'>Confirmation Button</a> by Ruben A Sanchez
-    (<a href='https://codepen.io/rubenasanchez'>@rubenasanchez</a>) on <a href='https://codepen.io'>CodePen</a>.
-  </iframe>
+  <iframe src="https://codesandbox.io/embed/proper-usage-of-react-tracked-o8v3s?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="proper usage of react-tracked"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 </div>
 ```
 
@@ -335,4 +340,4 @@ There is a special `posts.json` file located in the `jsonData` directory. It wil
 Suppose you need to host your blog created using Harold from subdirectory. For example, `www.mywebsite.com/blog/` then you would need to configure `hostDirName` in the `.haroldrc` file. Add there the name of your subfolder. The second thing is that you need to be aware of your paths (posts links, images, styles, etc.). The default Harold's templates support relative paths by default. It uses the `relativePath` handlebars helper for that. So it should work well in both cases when hosted from root and subdirectory.
 
 
-[Next: Recipes](/docs/recipes.html)
+[Next: Custom templates](/docs/custom-templates.html)
