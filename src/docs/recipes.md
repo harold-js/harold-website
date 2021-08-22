@@ -183,7 +183,7 @@ Sometimes you don't want to build a blog, but let's say, documentation. There is
 
 ```
 
-## Adding robots.txt, manifest.json, and any other statics
+## Adding robots.txt, manifest.json, etc.
 
 In many cases, there is a need to add some custom files to the root of your website. You can do this using the optional `src/statics` directory. Example: `src/statics/robots.txt` will be placed in `build/robots.txt` next to your index.html file. You can also nest your directories like `src/statics/some-dir/some-dir/file.txt`. It will land in `build/some-dir/some-dir/file.txt`.
 
