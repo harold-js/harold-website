@@ -147,7 +147,9 @@
       if (pathname) {
         const menuLinks = sidebarLeft.querySelectorAll('a');
         menuLinks.forEach(function (aElem) {
-          if (aElem.matches(`a[href*="${pathname.replace('/docs', '')}"]`)) {
+          if (
+            aElem.matches(`a[href*="${pathname.replace('/docs.html', '')}"]`)
+          ) {
             aElem.classList.add(sidebarLeftActiveMenuItemClass);
           }
         });
