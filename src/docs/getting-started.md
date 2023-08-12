@@ -31,7 +31,7 @@ Below you can watch a quick walk-through video:
 
 ## Requirements
 
-- the minimal version of Node is 12.0.0
+- the minimal version of Node is 16.0.0
 - basic knowledge of [Handlebars](https://handlebarsjs.com/) templating is required
 - basic knowledge of [Markdown](https://commonmark.org/help/) with Front Matter approach is required
 - basic knowledge of SCSS is helpful, but you can also write standard CSS using .scss files
