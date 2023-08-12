@@ -16,25 +16,25 @@ There is a possibility to pass an archive from a remote server or local file sys
 ## Initialization examples:
 
 ```bash
-npm init harold-app my-app -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
+npm init harold-app@latest my-app -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
 ```
 
 with npm 7+
 
 ```bash
-npm init harold-app my-app -- -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
+npm init harold-app@latest my-app -- -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
 ```
 
 Or it can also be a local file:
 
 ```bash
-npm init harold-app my-app -t ./main.zip
+npm init harold-app@latest my-app -t ./main.zip
 ```
 
 with npm 7+
 
 ```bash
-npm init harold-app my-app -- -t ./main.zip
+npm init harold-app@latest my-app -- -t ./main.zip
 ```
 
 ## Custom template structure

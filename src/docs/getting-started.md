@@ -40,19 +40,19 @@ Below you can watch a quick walk-through video:
 
 **npx**
 ```bash
-npx create-harold-app my-app
+npx create-harold-app@latest my-app
 ```
 _(npx is a package runner tool that comes with npm 5.2+ and higher, see instructions for older npm versions)_
 
 **npm**
 ```bash
-npm init harold-app my-app
+npm init harold-app@latest my-app
 ```
 _(npm init <initializer> is available in npm 6+)_
 
 **yarn**
 ```bash
-yarn create harold-app my-app
+yarn create harold-app@latest my-app
 ```
 _(yarn create <starter-kit-package> is available in Yarn 0.25+)_
 
@@ -64,11 +64,11 @@ As an option, you can choose with which template it should init the project. Pos
 - docs
 - bare
 
-If you want to init the project with `docs` template, pass additional option `-t docs`. For example: `npm init harold-app my-app -t docs` or with npm 7+ `npm init harold-app my-app -- -t docs`. The same for `bare` template.
+If you want to init the project with `docs` template, pass additional option `-t docs`. For example: `npm init harold-app@latest my-app -t docs` or with npm 7+ `npm init harold-app@latest my-app -- -t docs`. The same for `bare` template.
 
 In the future, there will be a possibility to pass custom templates.
 
-Write `create-harold-app --help` in a terminal to get the list of options.
+Write `create-harold-app@latest --help` in a terminal to get the list of options.
 
 ## Start
 
