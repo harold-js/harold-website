@@ -16,13 +16,13 @@ There is a possibility to pass an archive from a remote server or local file sys
 ## Initialization examples:
 
 ```bash
-npm init harold-app my-app -t https://github.com/juliancwirko/harold-template-scaffold/archive/refs/heads/main.zip
+npm init harold-app my-app -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
 ```
 
 with npm 7+
 
 ```bash
-npm init harold-app my-app -- -t https://github.com/juliancwirko/harold-template-scaffold/archive/refs/heads/main.zip
+npm init harold-app my-app -- -t https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
 ```
 
 Or it can also be a local file:
@@ -39,7 +39,7 @@ npm init harold-app my-app -- -t ./main.zip
 
 ## Custom template structure
 
-As you can see, there is a separate very basic repository that includes a scaffold for every custom template. It is a clean starting point. Check it out [here](https://github.com/juliancwirko/harold-template-scaffold).
+As you can see, there is a separate very basic repository that includes a scaffold for every custom template. It is a clean starting point. Check it out [here](https://github.com/harold-js/harold-template-scaffold).
 
 The structure of your template archive should look like this:
 
@@ -60,12 +60,12 @@ It is crucial to have the root directory in the archive. It is how it looks by d
 
 All custom templates should start with a similar file and directories structure. You can also check examples of ready-to-use templates:
 
-- [Default Template repository](https://github.com/juliancwirko/harold-template-default)
-- [Docs Template repository](https://github.com/juliancwirko/harold-template-docs)
+- [Default Template repository](https://github.com/harold-js/harold-template-default)
+- [Docs Template repository](https://github.com/harold-js/harold-template-docs)
 
 ## Harold config
 
-You can add `.haroldrc` to your custom template. It will overwrite the one at the root of the project (if any). It is helpful because sometimes, the additional configuration for the whole project could be required in custom templates. For example, take a look at [docs template](https://github.com/juliancwirko/harold-template-docs).
+You can add `.haroldrc` to your custom template. It will overwrite the one at the root of the project (if any). It is helpful because sometimes, the additional configuration for the whole project could be required in custom templates. For example, take a look at [docs template](https://github.com/harold-js/harold-template-docs).
 
 
 ## Initialize directly from the repo
@@ -73,9 +73,9 @@ You can add `.haroldrc` to your custom template. It will overwrite the one at th
 There are three main services for git. GitHub, Bitbucket and Gitlab. Each has its paths and ways to download the .zip file or get the path to such a file. For example, for GitHub, you can download the zip file and copy its path depending on the branch. Example: 
 
 ```bash
-https://github.com/juliancwirko/harold-template-scaffold/archive/refs/heads/main.zip
+https://github.com/harold-js/harold-template-scaffold/archive/refs/heads/main.zip
 ```
 
 You can always download the zip file and initialize the Harold project using the local file path.
 
-[Next: Guides](/docs/guides.html)
+[Next: Recipes](/docs/recipes.html)

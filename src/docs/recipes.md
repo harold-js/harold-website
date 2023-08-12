@@ -63,7 +63,7 @@ You can use `postsList` Handlebars helper with `perPageLimit` param. You can use
 </div>
 ```
 
-More examples on [GitHub](https://github.com/juliancwirko/harold-template-default)
+More examples on [GitHub](https://github.com/harold-js/harold-template-default)
 
 ## Simple posts list
 
@@ -132,7 +132,7 @@ twitterImage: 'https://my-website.com/assets/images/ogImage.png'
 ---
 ```
 
-More examples on [GitHub](https://github.com/juliancwirko/harold-template-default)
+More examples on [GitHub](https://github.com/harold-js/harold-template-default)
 
 ## Posts JSON data
 
@@ -169,7 +169,7 @@ fetchPostsJsonData().then((data) => {
 });
 ```
 
-More examples on [GitHub](https://github.com/juliancwirko/harold-template-default/tree/main/assets)
+More examples on [GitHub](https://github.com/harold-js/harold-template-default/tree/main/assets)
 
 ## Custom directories names
 

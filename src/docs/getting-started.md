@@ -16,9 +16,9 @@ Harold is a static site generator that can help quickly set up websites, blogs, 
 Check out the demo of predefined templates, which you can use:
 
 <ul>
-  <li><a href="https://cocky-leakey-9ad1bc.netlify.app/">Default template</a></li>
-  <li><a href="https://hardcore-curie-8f1ce0.netlify.app/">Docs template</a></li>
-  <li><a href="https://elegant-volhard-48a4d1.netlify.app/">Bare template</a></li>
+  <li><a href="https://haroldjs-default-demo.netlify.app/">Default template</a></li>
+  <li><a href="https://haroldjs-docs-demo.netlify.app/">Docs template</a></li>
+  <li><a href="https://haroldjs-bare-demo.netlify.app/">Bare template</a></li>
 </ul>
 
 ## Walk-through video
@@ -103,14 +103,14 @@ If you are using the search system, change `postsPath` in `harold-search.js`.
 
 ## harold-scripts
 
-[harold-scripts](https://github.com/juliancwirko/harold-scripts) is the fundamental toolset that will run the dev server and build a static site. It comes as a dependency from a separate package. 
+[harold-scripts](https://github.com/harold-js/harold-scripts) is the fundamental toolset that will run the dev server and build a static site. It comes as a dependency from a separate package. 
 
 You don't have to think about it much. Create Harold App will install it when initializing the project. The package.json file of the newly created project will already have a configuration for a `start` and `build` scripts using harold-scripts.
 
 **Updating your project:**
 
 1. You need to update `harold-scripts`
-1. Check if there are any breaking changes in the [CHANGELOG.md](https://github.com/juliancwirko/create-harold-app/blob/master/CHANGELOG.md)
+1. Check if there are any breaking changes in the [CHANGELOG.md](https://github.com/harold-js/create-harold-app/blob/master/CHANGELOG.md)
 2. In your project, update the version of `harold-scripts` package
 
 
