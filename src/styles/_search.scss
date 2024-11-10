@@ -1,3 +1,6 @@
+@use "variables";
+@use "common";
+
 .search-overlay {
   @extend .full-screen-overlay;
 }
@@ -23,23 +26,23 @@
 .search-overlay-input {
   width: 100%;
   background-color: transparent;
-  color: $color-main-light;
+  color: variables.$color-main-light;
   border: 0;
   font-size: 60px;
-  font-family: $font-family-main;
+  font-family: variables.$font-family-main;
   font-weight: 900;
   padding: 20px 0 10px;
   line-height: 1;
   outline: none;
-  border-bottom: 5px solid $color-main-light;
+  border-bottom: 5px solid variables.$color-main-light;
 
   &::placeholder {
-    color: $color-main-light;
+    color: variables.$color-main-light;
   }
 }
 
 .search-overlay-results {
-  font-family: $font-family-main;
+  font-family: variables.$font-family-main;
   font-size: 20px;
   font-weight: 900;
   max-width: 60%;
@@ -54,11 +57,11 @@
 .search-overlay-results-item {
   display: flex;
   align-items: center;
-  color: $color-main-light;
+  color: variables.$color-main-light;
   padding: 5px 0;
 
   a {
-    color: $color-main-light;
+    color: variables.$color-main-light;
     text-decoration: none;
 
     &:hover {

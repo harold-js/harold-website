@@ -1,3 +1,6 @@
+@use "variables";
+@use "common";
+
 .main-menu-overlay {
   @extend .full-screen-overlay;
 }
@@ -20,16 +23,16 @@
 }
 
 .main-menu-overlay-list-item {
-  color: $color-main-light;
+  color: variables.$color-main-light;
   padding: 5px 0;
   margin-bottom: 40px;
   font-size: 60px;
-  font-family: $font-family-main;
+  font-family: variables.$font-family-main;
   font-weight: 900;
   list-style-type: none;
 
   a {
-    color: $color-main-light;
+    color: variables.$color-main-light;
     text-decoration: none;
 
     &:hover {
@@ -43,7 +46,7 @@
   width: 100px;
   margin: 0 auto;
   display: block;
-  background-color: $color-main-light;
+  background-color: variables.$color-main-light;
   margin-top: 70px;
   margin-bottom: 50px;
 }
@@ -56,7 +59,7 @@
   padding-top: 10px;
   
   a {
-    color: $color-main-light;
+    color: variables.$color-main-light;
     text-decoration: none;
     display: inline-block;
     margin: 0 20px;

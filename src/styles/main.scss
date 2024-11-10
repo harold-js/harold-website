@@ -1,7 +1,9 @@
-@import 'variables';
-@import 'utils';
-@import 'basic';
-@import 'search';
-@import 'main-menu';
-@import 'docs';
-@import 'homepage';
+@use 'variables';
+@use 'utils';
+@use 'common';
+@use 'icons';
+@use 'basic';
+@use 'search';
+@use 'main-menu';
+@use 'docs';
+@use 'homepage';

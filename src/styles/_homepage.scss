@@ -1,3 +1,5 @@
+@use "variables";
+
 .homepage-lead {
   text-align: center;
 
@@ -52,11 +54,11 @@
 }
 
 .homepage-lead-accent {
-  color: $color-main-contrast;
+  color: variables.$color-main-contrast;
 }
 
 .homepage-link {
-  color: $color-main-contrast;
+  color: variables.$color-main-contrast;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -68,15 +70,15 @@
     display: inline-block;
     padding: 10px 30px;
     border-radius: 100px;
-    border: 3px solid $color-main-contrast;
-    color: $color-main-contrast;
+    border: 3px solid variables.$color-main-contrast;
+    color: variables.$color-main-contrast;
     text-decoration: none;
     font-weight: 900;
     transition: background-color .2s, color .2s;
 
     &:hover {
-      background-color: $color-main-contrast;
-      color: $color-main-light;
+      background-color: variables.$color-main-contrast;
+      color: variables.$color-main-light;
     }
   }
 }

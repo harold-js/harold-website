@@ -1,0 +1,57 @@
+@use "sass:color";
+@use "variables";
+
+// menu, search etc.
+.full-screen-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(variables.$color-main-dark, 0.95);
+  color: variables.$color-main-light;
+  opacity: 0;
+  visibility: hidden;
+  z-index: variables.$z-index-full-screen-overlay;
+
+  &.js-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.full-screen-overlay-contents {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.full-screen-overlay-close-btn {
+  position: absolute;
+  top: 40px;
+  right: 55px;
+  cursor: pointer;
+
+  .gg-close {
+    transform: scale(2);
+  }
+}
+
+.button {
+  color: variables.$color-main-dark;
+  display: inline-block;
+  transition: background-color .2s;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 3px;
+  text-align: center;
+  font-family: variables.$font-family-main;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: variables.$color-main-dark;
+  color: variables.$color-main-light;
+  border: 0;
+
+  &:hover {
+    background-color: color.adjust(variables.$color-main-dark, $lightness: 5%);
+  }
+}
