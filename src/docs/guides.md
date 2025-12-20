@@ -21,46 +21,123 @@ With Harold, the workflow looks like this:
   4. You work with a development server that runs at `localhost:3000`.
   5. You will get all changes reflected in the browser after refreshing it.
 
+## Project Types
+
+Since v1.3.0, all directories are optional, making Harold flexible for different project types:
+
+### Minimal Landing Page
+**Use case:** Simple website with just static pages, no blog.
+
+**Minimal structure:**
+```bash
+src/
+├── pages/
+│   └── index.hbs
+└── styles/
+    └── main.scss
+```
+
+No posts, partials, or assets required!
+
+---
+
+### Documentation Site
+**Use case:** Technical documentation or knowledge base.
+
+**Recommended structure:**
+```bash
+src/
+├── docs/           # Markdown docs (configure as mdFilesDirName)
+├── docs-layouts/   # Doc templates
+├── pages/
+│   ├── index.hbs
+│   └── docs.hbs
+├── partials/
+│   └── sidebar.hbs
+└── styles/
+    └── main.scss
+```
+
+**Configuration:**
+```json
+{
+  "mdFilesDirName": "docs",
+  "mdFilesLayoutsDirName": "docs-layouts"
+}
+```
+
+---
+
+### Blog
+**Use case:** Personal or company blog.
+
+**Full structure:**
+```bash
+src/
+├── posts/          # Blog posts in markdown
+├── blog-layouts/   # Post templates
+├── pages/
+│   ├── index.hbs
+│   ├── about.hbs
+│   └── all-posts.hbs
+├── partials/
+│   ├── head.hbs
+│   └── footer.hbs
+├── assets/
+│   └── images/
+└── styles/
+    └── main.scss
+```
+
+---
+
+### Full Website
+**Use case:** Complex site with blog, pages, and custom features.
+
+**Complete structure:** See "Directories structure" section below.
+
+---
+
 ## Directories structure
 
 Below is the `src` directory structure from the Default template:
 
 ```bash
 .
-├── assets
-│   ├── images
-│   │   └── favicon.png
-│   └── js
-│       ├── harold.js
-│       ├── harold-main-menu.js
-│       ├── harold-scroll-top.js
-│       └── harold-search.js
-├── blog-layouts
-│   └── blog-post.hbs
-├── jsonData
-│   └── posts.json
-├── pages
-│   ├── about.hbs
-│   ├── all-posts-list.hbs
-│   ├── author.hbs
-│   ├── index.hbs
-│   └── projects.hbs
-├── partials
-│   ├── footer.hbs
-│   ├── go-top-btn.hbs
-│   ├── head.hbs
-│   ├── main-menu-overlay.hbs
-│   └── search-overlay.hbs
-├── posts
-│   ├── example1.md
-│   ├── example2.md
-│   ├── example3.md
-│   ├── example4.md
-│   ├── example5.md
-│   ├── example6.md
-│   └── harold-intro.md
-└── statics (optional)
-└── styles
+├── assets (optional)
+│   ├── images
+│   │   └── favicon.png
+│   └── js
+│       ├── harold.js
+│       ├── harold-main-menu.js
+│       ├── harold-scroll-top.js
+│       └── harold-search.js
+├── blog-layouts (optional, required if using posts)
+│   └── blog-post.hbs
+├── jsonData (auto-generated)
+│   └── posts.json
+├── pages (optional)
+│   ├── about.hbs
+│   ├── all-posts-list.hbs
+│   ├── author.hbs
+│   ├── index.hbs
+│   └── projects.hbs
+├── partials (optional)
+│   ├── footer.hbs
+│   ├── go-top-btn.hbs
+│   ├── head.hbs
+│   ├── main-menu-overlay.hbs
+│   └── search-overlay.hbs
+├── posts (optional)
+│   ├── example1.md
+│   ├── example2.md
+│   ├── example3.md
+│   ├── example4.md
+│   ├── example5.md
+│   ├── example6.md
+│   └── harold-intro.md
+├── statics (optional)
+└── styles (optional)
     ├── _basic.scss
     ├── _homepage.scss
     ├── _main-menu.scss
@@ -71,6 +148,14 @@ Below is the `src` directory structure from the Default template:
     ├── _utils.scss
     └── _variables.scss
 ```
+
+**Note:** Since version 1.3.0, most directories are optional! Harold will gracefully skip missing directories:
+- Missing `posts` directory? Harold will build pages only
+- Missing `assets`? No problem, just pages will be built
+- Missing `styles`? Harold will skip CSS generation
+- Missing `pages` or `partials`? Harold will warn but continue
+
+This makes Harold more flexible for different project types (documentation-only sites, minimal landing pages, etc.).
 
 `styles` and `assets` directories are self-explanatory. Here you can build your Scss structures and custom javascript logic. You can also save images here. All will be moved and compiled later.
 
@@ -200,17 +285,97 @@ You can add as many parameters there as you can, but Harold requires mandatory o
 - `title` - defines post title
 - `publicationDate` - defines publication date in format YYYY-MM-DD
 
+**Optional front matter fields** supported by Harold:
+
+- `excerpt` - Short description of the post (used in post lists)
+- `tags` - Array of tags for categorization and filtering
+- `coverImage` - URL or path to cover/featured image
+
+**Custom fields** - You can add any custom fields you want! All front matter data is passed to your layout template and accessible as variables.
+
+**Example with all supported fields:**
+
+```markdown
+---
+layout: 'blog-post'
+title: 'My Awesome Post'
+publicationDate: '2025-12-20'
+excerpt: 'A brief description of this post'
+tags:
+  - javascript
+  - tutorial
+coverImage: '/assets/images/cover.jpg'
+customField: 'Any custom data you need'
+---
+
+Rest of the markdown content here...
+```
+
+**Accessing custom fields in layouts:**
+
+In your layout `.hbs` file, all front matter fields are available as variables:
+
+```handlebars
+<h1>{{title}}</h1>
+<p>Published: {{formatDate date=publicationDate}}</p>
+{{#if customField}}
+  <div class="custom">{{customField}}</div>
+{{/if}}
+<div class="content">
+  {{{content}}}
+</div>
+```
+
 In markdown files, you can also use standard HTML code. Of course, most of it. Some special scripting tags are removed when compiling. 
 
-In the Default template, there are predefined styles and structures to be used. For example, wide media elements: 
+Since version 1.3.0, images in markdown automatically get optimized:
+- **Automatic dimensions** - Width and height attributes are added automatically to prevent layout shift (only for local files)
+- **Lazy loading** - Native `loading="lazy"` for better performance  
+- **Async decoding** - `decoding="async"` for non-blocking rendering
+
+```markdown
+![Alt text](assets/images/photo.jpg)
+```
+
+Becomes:
+```html
+<img src="assets/images/photo.jpg" 
+     alt="Alt text" 
+     width="800" 
+     height="600" 
+     loading="lazy" 
+     decoding="async" />
+```
+
+In the Default template, there are predefined styles and structures to be used. For example, centered images: 
+
+```markdown
+![Alt text](image.jpg?style=centered)
+```
+
+Or wide media elements using query parameters (since v1.3.0):
+
+```markdown
+![Wide image](image.jpg?style=wide)
+```
+
+Alternatively, you can still use HTML:
 
 ```html
 <div class="wide-content"><img src="/assets/img.png" alt="alt text" /></div>
 ```
 
-So to use it, you can paste your image into div with the `wide-content` class.
+The query parameter approach is recommended as it keeps your markdown cleaner.
 
 Another predefined structure will be helpful when you need to embed some iframe-based content.
+
+Since v1.3.0, you can use query parameters for cleaner markdown:
+
+```html
+<iframe src="https://codepen.io/embed/xxxxx?style=embed" height="500"></iframe>
+```
+
+Or the traditional HTML wrapper:
 
 ```html
 <div class="embeded-media-container">
@@ -223,13 +388,41 @@ Another predefined structure will be helpful when you need to embed some iframe-
 </div>
 ```
 
-It will be also responsive.
+Both approaches will make your embedded content responsive. The `?style=embed` parameter automatically wraps the iframe in the necessary container div.
 
 ## Helpers
 
 Helpers are unique fragments of Handlebars code that maps javascript functions under the hood. So you can use loops, conditions, blocks, etc. The list of all built-in helpers is here: [https://handlebarsjs.com/guide/](https://handlebarsjs.com/guide/).
 
 Besides that Harold offers it's own custom helpers which are:
+
+**responsiveImg** (since v1.3.0)
+
+A powerful helper for creating responsive, optimized images with automatic dimensions:
+
+```handlebars
+{{responsiveImg 
+  src="assets/images/hero.jpg" 
+  alt="Hero image"
+  width="1200"
+  height="600"
+  loading="eager"
+  className="hero-image"
+  srcset="assets/images/hero-small.jpg 480w, assets/images/hero-large.jpg 1200w"
+  sizes="(max-width: 600px) 480px, 1200px"
+}}
+```
+
+Parameters:
+- `src` (required) - Image source path
+- `alt` - Alt text for accessibility
+- `width` - Image width (auto-detected if not provided)
+- `height` - Image height (auto-detected if not provided)
+- `loading` - "lazy" (default) or "eager" for above-the-fold images
+- `decoding` - "async" (default) or "sync"
+- `className` - CSS class name
+- `srcset` - Responsive image sources
+- `sizes` - Media query sizes
 
 **formatDate**
 
@@ -313,7 +506,7 @@ You can create many different structures. The Default template uses Scss imports
 
 As you can see, all files which we want to import should have the `_` prefix. This tells the compiler that it shouldn't create separate .css files from these.
 
-Harold also uses [PostCSS](https://postcss.org/) and [Autoprefixer](https://www.npmjs.com/package/autoprefixer) out of the box. For now there is no way to use custom plugins, but it is planned.
+Harold also uses [PostCSS](https://postcss.org/) and [Autoprefixer](https://www.npmjs.com/package/autoprefixer) out of the box. Since version 1.3.0, CSS is automatically minified using cssnano for optimal file sizes. For now there is no way to use custom plugins, but it is planned.
 
  ## Assets
 

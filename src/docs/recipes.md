@@ -11,6 +11,55 @@ tags:
 
 Below are ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template.
 
+## Query Parameter Styling (v1.3.0+)
+
+Since version 1.3.0, you can use clean query parameter syntax instead of HTML wrappers.
+
+### Centered small images
+
+```markdown
+![Small icon](assets/images/icon.png?style=centered)
+```
+
+Instead of:
+```html
+<img src="assets/images/icon.png" alt="Small icon" style="display:block;margin:0 auto" />
+```
+
+### Full-width images
+
+```markdown
+![Hero image](assets/images/hero.jpg?style=wide)
+```
+
+Instead of:
+```html
+<div class="wide-content"><img src="assets/images/hero.jpg" alt="Hero image" /></div>
+```
+
+### Responsive embedded media
+
+```html
+<iframe src="https://codepen.io/username/embed/xxxxx?style=embed" height="300"></iframe>
+```
+
+Instead of:
+```html
+<div class="embeded-media-container">
+  <iframe src="https://codepen.io/username/embed/xxxxx" height="300"></iframe>
+</div>
+```
+
+### Vimeo videos
+
+```html
+<iframe src="https://player.vimeo.com/video/12345?style=vimeo"></iframe>
+```
+
+The `?style=vimeo` parameter ensures proper responsive sizing for Vimeo embeds.
+
+---
+
 ## Featured post
 
 You can use `postsList` Handlebars helper with `perPageLimit` param set to 1. Then you can provide your wrapper `className` and style it as you need.

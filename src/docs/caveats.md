@@ -39,6 +39,17 @@ It is something for further research for sure.
 
 ## Markdown tags
 
-Harold supports only the default set of Markdown tags. There are styles and HTML structures prepared in the default theme, like wide content for images and iframes. But you still have to write standard HTML there. 
+Harold supports the default set of Markdown tags. Since version 1.3.0, Harold includes a custom markdown processing plugin that enables cleaner syntax for common layouts:
 
-In the future, there are plans to prepare a custom markdown parser plugin to be able to incorporate some custom Markdown structures.
+**Query Parameter Styling (v1.3.0+):**
+- `![image](photo.jpg?style=wide)` - Full-width images
+- `![icon](icon.png?style=centered)` - Centered images  
+- `<iframe src="url?style=embed">` - Responsive embeds
+
+These query parameters automatically wrap elements with appropriate HTML structures, eliminating the need for manual HTML wrappers in most cases.
+
+**Traditional HTML** still works if you prefer:
+- `<div class="wide-content"><img...></div>`
+- `<div class="embeded-media-container"><iframe...></iframe></div>`
+
+See the [Guides](/docs/guides.html) section for more details on query parameter styling.

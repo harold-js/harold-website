@@ -31,7 +31,7 @@ Below you can watch a quick walk-through video:
 
 ## Requirements
 
-- the minimal version of Node is 16.0.0
+- the minimal version of Node is 20.0.0
 - basic knowledge of [Handlebars](https://handlebarsjs.com/) templating is required
 - basic knowledge of [Markdown](https://commonmark.org/help/) with Front Matter approach is required
 - basic knowledge of SCSS is helpful, but you can also write standard CSS using .scss files
@@ -87,6 +87,8 @@ For now, there isn't much to configure, but you can configure the directory for 
 
 You can also configure the name for output directory using `outputDirName` and if you want to host your site in subdirectory you would also need to add `hostDirName`.
 
+Since version 1.3.0, you can also configure HTML and CSS minification using `minifyHtml` and `minifyCss` options (both enabled by default for better performance).
+
 Example of `.haroldrc` (placed in the root of your harold app):
 
 ```
@@ -94,7 +96,9 @@ Example of `.haroldrc` (placed in the root of your harold app):
   mdFilesDirName: 'docs',
   mdFilesLayoutsDirName: 'docs-layouts',
   outputDirName: 'dist',
-  hostDirName: 'subfolder-name'
+  hostDirName: 'subfolder-name',
+  minifyHtml: true,
+  minifyCss: true
 }
 ```
 
@@ -110,8 +114,7 @@ You don't have to think about it much. Create Harold App will install it when in
 **Updating your project:**
 
 1. You need to update `harold-scripts`
-1. Check if there are any breaking changes in the [CHANGELOG.md](https://github.com/harold-js/create-harold-app/blob/master/CHANGELOG.md)
-2. In your project, update the version of `harold-scripts` package
-
+2. Check if there are any breaking changes in the [CHANGELOG.md](https://github.com/harold-js/create-harold-app/blob/master/CHANGELOG.md)
+3. In your project, update the version of `harold-scripts` package
 
 [Next: Guides](/docs/guides.html)
