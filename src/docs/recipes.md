@@ -187,6 +187,10 @@ More examples on [GitHub](https://github.com/harold-js/harold-template-default)
 
 By default, you have access to JSON data with all posts. It is useful when you want to do something dynamic using JavaScript. For example, 'load more' functionality or search. The search system is implemented already in the default template. Here is an example:  
 
+**Note:** For nested posts, the `fileName` field includes the relative path from the posts root. For example:
+- Root-level post: `"fileName": "example1.html"`
+- Nested post: `"fileName": "category/nested-post.html"`
+
 ```javascript
 const postsJsonDataPath = '/jsonData/posts.json';
 

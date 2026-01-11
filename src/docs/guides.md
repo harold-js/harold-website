@@ -135,7 +135,9 @@ Below is the `src` directory structure from the Default template:
 │   ├── example4.md
 │   ├── example5.md
 │   ├── example6.md
-│   └── harold-intro.md
+│   ├── harold-intro.md
+│   └── category/          # Nested subdirectories are supported
+│       └── nested-post.md
 ├── statics (optional)
 └── styles (optional)
     ├── _basic.scss
@@ -159,7 +161,9 @@ This makes Harold more flexible for different project types (documentation-only 
 
 `styles` and `assets` directories are self-explanatory. Here you can build your Scss structures and custom javascript logic. You can also save images here. All will be moved and compiled later.
 
-`posts` and `pages` are places for actual content. You write pages with Handlebars markup and posts with Markdown.
+`posts` and `pages` are places for actual content. You write pages with Handlebars markup and posts with Markdown. 
+
+**Nested Posts Support:** You can organize posts in subdirectories within the `posts` directory. The directory structure will be preserved in the output URLs. For example, `src/posts/category/article.md` will be generated as `build/posts/category/article.html` and accessible at `/posts/category/article.html`. This is useful for organizing posts by category or topic.
 
 `blog-layouts` is a place for all custom blog layouts. You can then point particular layout to use in the Markdown file.
 
@@ -184,13 +188,15 @@ All compiles and lands in the `build` directory:
 ├── jsonData
 │   └── posts.json
 ├── posts
-│   ├── example1.html
-│   ├── example2.html
-│   ├── example3.html
-│   ├── example4.html
-│   ├── example5.html
-│   ├── example6.html
-│   └── harold-intro.html
+│   ├── example1.html
+│   ├── example2.html
+│   ├── example3.html
+│   ├── example4.html
+│   ├── example5.html
+│   ├── example6.html
+│   ├── harold-intro.html
+│   └── category/          # Nested structure preserved
+│       └── nested-post.html
 ├── projects.html
 └── styles
     └── main.css
@@ -256,7 +262,7 @@ Read more in the Handlebars docs: [https://handlebarsjs.com/guide/](https://hand
 
 ## Markdown files
 
-Every single Markdown file is compiled into a separate .html file located in the `posts` directory (or different one if there is custom config file). Every file defines a couple of parameters at the top of the file. It uses the Front Matter approach (Embedded YAML structured data at the top of Markdown documents).
+Every single Markdown file is compiled into a separate .html file located in the `posts` directory (or different one if there is custom config file). The directory structure within `posts` is preserved in the output, so nested posts will maintain their subdirectory paths in the generated URLs. Every file defines a couple of parameters at the top of the file. It uses the Front Matter approach (Embedded YAML structured data at the top of Markdown documents).
 
 ```markdown
 ---
