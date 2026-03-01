@@ -70,6 +70,21 @@ In the future, there will be a possibility to pass custom templates.
 
 Write `create-harold-app@latest --help` in a terminal to get the list of options.
 
+## AI-Assisted Setup with Potion Kit
+
+[Potion Kit](https://github.com/uiPotion/potion-kit) is a CLI tool that lets you build HaroldJS websites through an interactive AI chat. Instead of manually scaffolding and editing files, you describe what you want and the AI guides you through building the site using HaroldJS and [UIPotion](https://uipotion.com) components.
+
+**Quick start:**
+```bash
+npx potion-kit chat
+```
+
+Run this from a project directory with a `.env` file containing your LLM API credentials (supports OpenAI, Anthropic, and Moonshot). The tool reads your project files, suggests changes using real component specs, and maintains conversation history across sessions.
+
+Potion Kit stores its state in a `.potion-kit/` directory with chat history and event logs.
+
+Learn more: [github.com/uiPotion/potion-kit](https://github.com/uiPotion/potion-kit)
+
 ## Start
 
 From the newly created app's directory (in our case, my-app), run `npm start`. It will serve the app under `localhost:3000`. To change the port, just add `PORT` env, like: `PORT=3002 npm start`.
