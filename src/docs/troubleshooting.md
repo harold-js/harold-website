@@ -22,7 +22,7 @@ Error: Cannot find module 'harold-scripts'
 
 **Solution:**
 1. Install dependencies: `npm install`
-2. Ensure `harold-scripts` is in your `package.json`
+2. Ensure `harold-scripts` is in your `package.json` (projects created by `create-harold-app` add it to `devDependencies`)
 3. Delete `node_modules` and `package-lock.json`, then run `npm install` again
 
 ---
@@ -322,16 +322,16 @@ Markdown like `**bold**` or `# Heading` not rendering.
 `npm run build` works locally but fails on Netlify/Vercel/GitHub Actions.
 
 **Solution:**
-1. **Check Node version:** Ensure hosting uses Node 20+
+1. **Check Node version:** Ensure hosting uses Node 24+
    ```json
    {
      "engines": {
-       "node": ">=20.0.0"
+       "node": ">=24.0.0"
      }
    }
    ```
 2. **Verify build command:** Should be `harold-scripts build`
-3. **Check dependencies:** Ensure `harold-scripts` is in `dependencies` not `devDependencies`
+3. **Check package metadata:** Projects created by `create-harold-app` keep `harold-scripts` in `devDependencies`, so make sure it is still present there and that your hosting build step installs dev dependencies
 
 ---
 
@@ -396,4 +396,3 @@ Inspect `build/` directory:
 ---
 
 [Next: Caveats](/docs/caveats.html)
-

@@ -31,12 +31,14 @@ Below you can watch a quick walk-through video:
 
 ## Requirements
 
-- the minimal version of Node is 20.0.0
+- the minimal version of Node is 24.0.0
 - basic knowledge of [Handlebars](https://handlebarsjs.com/) templating is required
 - basic knowledge of [Markdown](https://commonmark.org/help/) with Front Matter approach is required
 - basic knowledge of SCSS is helpful, but you can also write standard CSS using .scss files
 
 ## Installation
+
+Harold 1.4.2 requires Node 24 or newer.
 
 **npx**
 ```bash
@@ -66,20 +68,40 @@ As an option, you can choose with which template it should init the project. Pos
 
 If you want to init the project with `docs` template, pass additional option `-t docs`. For example: `npm init harold-app@latest my-app -t docs` or with npm 7+ `npm init harold-app@latest my-app -- -t docs`. The same for `bare` template.
 
-In the future, there will be a possibility to pass custom templates.
+You can also initialize from a custom template archive hosted remotely or stored locally. See [Custom templates](/docs/custom-templates.html) for examples and archive structure requirements.
 
 Write `create-harold-app@latest --help` in a terminal to get the list of options.
 
 ## AI-Assisted Setup with Potion Kit
 
-[Potion Kit](https://github.com/uiPotion/potion-kit) is a CLI tool that lets you build HaroldJS websites through an interactive AI chat. Instead of manually scaffolding and editing files, you describe what you want and the AI guides you through building the site using HaroldJS and [UIPotion](https://uipotion.com) components.
+[Potion Kit](https://github.com/uiPotion/potion-kit) is a CLI tool that combines HaroldJS, [UIPotion](https://uipotion.com) components, and AI chat to help you build static websites interactively. You can use it to scaffold a new Harold-style project or work inside an existing project directory.
 
-**Quick start:**
+**Scaffold a new project:**
+```bash
+npx potion-kit init my-site
+cd my-site
+```
+
+This creates a ready-to-build site with pages, partials, SCSS, package scripts, and a sample post.
+
+**Start an interactive chat:**
 ```bash
 npx potion-kit chat
 ```
 
-Run this from a project directory with a `.env` file containing your LLM API credentials (supports OpenAI, Anthropic, and Moonshot). The tool reads your project files, suggests changes using real component specs, and maintains conversation history across sessions.
+**One-shot mode:**
+```bash
+npx potion-kit chat "Add a docs landing page and navigation"
+```
+
+Create a `.env` file in the project directory with your LLM provider and API key before chatting. Potion Kit currently supports OpenAI, Anthropic, and Moonshot/Kimi providers.
+
+Helpful commands:
+
+- `npx potion-kit doctor` validates your configuration, provider connectivity, and project structure
+- `npx potion-kit clear` resets local chat state for the current project
+
+`init` is optional. You can also run `potion-kit chat` inside an existing Harold project or even an empty folder, as long as you run it from the directory that contains your `.env`.
 
 Potion Kit stores its state in a `.potion-kit/` directory with chat history and event logs.
 
@@ -124,7 +146,7 @@ If you are using the search system, change `postsPath` in `harold-search.js`.
 
 [harold-scripts](https://github.com/harold-js/harold-scripts) is the fundamental toolset that will run the dev server and build a static site. It comes as a dependency from a separate package. 
 
-You don't have to think about it much. Create Harold App will install it when initializing the project. The package.json file of the newly created project will already have a configuration for a `start` and `build` scripts using harold-scripts.
+You don't have to think about it much. Create Harold App installs it when initializing the project. The generated `package.json` already includes `start` and `build` scripts, plus a compatible `harold-scripts` version pinned in `devDependencies`.
 
 **Updating your project:**
 

@@ -13,17 +13,17 @@ There are some limitations when using Harold. Hopefully, we solve most of them o
 
 ## Nesting directories
 
-Harold doesn't support nesting directories for Pages and Posts. It is something which we will introduce later. It would need some core rewrites, which is quite time-consuming, and the value of that isn't tremendous.
+Posts can be nested, but pages cannot.
 
-For Pages, you should put .hbs files in the `pages` directory, and the output will be a .html file in the root of the output directory.
+For Pages, put `.hbs` files directly in the `pages` directory. Harold reads only that top-level directory, and the output will be an `.html` file in the root of the output directory.
 
-For Posts, you should put .md files in the `posts` directory, and output will be a .html file in the `posts` directory in the output directory.
+For Posts, you can put `.md` files anywhere inside the `posts` directory. Harold preserves the subdirectory structure in the output, so `src/posts/category/nested-post.md` becomes `build/posts/category/nested-post.html`.
 
-You can change the names of directories using `.haroldrc` config. See the guides section on how to do this. 
+You can change the Markdown posts directory name using `.haroldrc` config. See the guides section on how to do this.
 
 ## Support for multiple languages
 
-There is no a simple possibility to have multiple language blogs. When nesting directories are available, I think it will be more straightforward. The quickest solution would be to host two separate instances in subfolders of the main website. Like for example `www.myhost.com/en`.
+There is no simple built-in way to structure a multilingual Harold site yet. Nested posts help organize Markdown content, but pages are still flat, so the quickest solution is still to host separate Harold instances in subfolders of the main website. For example: `www.myhost.com/en`.
 
 ## Scss, PostCSS and Handlebars customization
 

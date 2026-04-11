@@ -13,8 +13,10 @@ This page lists all available configuration options for Harold. Configuration ca
 
 - A `harold` property in package.json
 - A `.haroldrc` file (JSON or YAML)
-- A `.haroldrc.json`, `.haroldrc.yaml`, `.haroldrc.yml` file
-- A `.haroldrc.js` or `harold.config.js` file (CommonJS)
+- A `.haroldrc.json`, `.haroldrc.yaml`, `.haroldrc.yml`, `.haroldrc.js`, or `.haroldrc.cjs` file
+- A `harold.config.js` or `harold.config.cjs` CommonJS module exporting an object
+
+Harold starts searching from the `src/` directory and walks up to the project root. In practice, that means config placed in `src/` overrides matching config in the root project directory.
 
 ## Configuration Options
 
@@ -233,16 +235,13 @@ Harold will:
 
 ## Configuration Priority
 
-Harold searches for configuration in this order (first found wins):
+Harold starts searching inside `src/` and stops at the project root. The first matching config file or `package.json` entry found by that search is used.
 
-1. `.haroldrc` in the `src` directory (template-specific)
-2. `harold` key in `package.json`
-3. `.haroldrc` in project root
-4. `.haroldrc.json`, `.haroldrc.yaml`, `.haroldrc.yml`
-5. `.haroldrc.js`, `harold.config.js`
-6. Default values
+In practice:
 
-**Tip:** Template-specific `.haroldrc` in `src/` overrides project-level configuration.
+1. Config placed in `src/` wins over matching config in the project root
+2. Harold accepts any of the file formats listed at the top of this page in either location
+3. Missing values fall back to Harold defaults
 
 ## Environment-Specific Configuration
 
@@ -276,4 +275,3 @@ NODE_ENV=production npm run build
 ```
 
 [Next: Performance & Optimization](/docs/performance.html)
-
