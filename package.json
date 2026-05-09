@@ -4,9 +4,11 @@
   "description": "harold-website",
   "main": "index.js",
   "scripts": {
-    "build": "harold-scripts build",
-    "start": "harold-scripts start",
-    "lint": "eslint . --fix",
+    "build": "npm run static && harold-scripts build",
+    "start": "npm run static && harold-scripts start",
+    "static": "node generate-static.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prettier": "prettier --write '**/*.{js,json}'"
   },
   "devDependencies": {

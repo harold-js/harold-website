@@ -1,0 +1,37 @@
+# Netlify redirects. Auto-generated - do not edit by hand.
+# Keep legacy URL mappings in generate-static.js.
+
+# Legacy URLs
+/docs/configuration.html /docs/configuration-reference.html 301
+/docs/configuration /docs/configuration-reference.html 301
+/docs/configuration/ /docs/configuration-reference.html 301
+
+# Canonical homepage URL
+/index.html / 301!
+/index / 301!
+/index/ / 301!
+
+# Canonical URLs: extensionless -> .html
+/docs /docs.html 301!
+/docs/ /docs.html 301!
+/404 /404.html 301!
+/404/ /404.html 301!
+/docs/configuration-reference /docs/configuration-reference.html 301!
+/docs/configuration-reference/ /docs/configuration-reference.html 301!
+/docs/performance /docs/performance.html 301!
+/docs/performance/ /docs/performance.html 301!
+/docs/troubleshooting /docs/troubleshooting.html 301!
+/docs/troubleshooting/ /docs/troubleshooting.html 301!
+/docs/recipes /docs/recipes.html 301!
+/docs/recipes/ /docs/recipes.html 301!
+/docs/caveats /docs/caveats.html 301!
+/docs/caveats/ /docs/caveats.html 301!
+/docs/getting-started /docs/getting-started.html 301!
+/docs/getting-started/ /docs/getting-started.html 301!
+/docs/guides /docs/guides.html 301!
+/docs/guides/ /docs/guides.html 301!
+/docs/custom-templates /docs/custom-templates.html 301!
+/docs/custom-templates/ /docs/custom-templates.html 301!
+
+# Serve 404 for missing URLs
+/* /404.html 404

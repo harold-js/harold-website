@@ -7,22 +7,35 @@
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
   <title>Harold - Static site generator - {{title}}</title>
   <meta name="description" content="{{description}}">
+  <meta name="author" content="Harold JS">
+  <meta name="robots" content="{{#if noindex}}noindex, nofollow{{else}}index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1{{/if}}">
+  <link rel="canonical" href="{{metaUrl}}">
   
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Harold" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="{{metaTitle}}" />
   <meta property="og:description" content="{{description}}" />
   <meta property="og:image" content="https://www.haroldjs.com/assets/images/ogimage.png" />
+  <meta property="og:image:alt" content="Harold - Static site generator" />
   <meta property="og:url" content="{{metaUrl}}" />
 
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@theJulianIo" />
+  <meta name="twitter:creator" content="@theJulianIo" />
   <meta name="twitter:title" content="{{metaTitle}}" />
   <meta name="twitter:description" content="{{description}}" />
   <meta name="twitter:url" content="{{metaUrl}}" />
   <meta name="twitter:image" content="https://www.haroldjs.com/assets/images/ogimage.png" />
+  <meta name="twitter:image:alt" content="Harold - Static site generator" />
+  <meta name="generator" content="Harold" />
+  <meta name="application-name" content="Harold" />
 
   <link rel="stylesheet"
       href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/stackoverflow-light.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://unpkg.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
 </head>

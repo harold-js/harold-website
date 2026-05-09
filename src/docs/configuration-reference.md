@@ -3,7 +3,7 @@ layout: 'docs'
 title: 'Configuration Reference'
 description: "Complete reference of all Harold configuration options"
 metaTitle: "Harold Configuration Reference - Static site generator"
-metaUrl: "https://www.haroldjs.com/docs/configuration.html"
+metaUrl: "https://www.haroldjs.com/docs/configuration-reference.html"
 publicationDate: '2025-12-20'
 tags:
   - docs
