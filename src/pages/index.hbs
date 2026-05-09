@@ -1,32 +1,42 @@
 {{> head
-title="Blogs, portfolios, documentation sites"
-description="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
-metaTitle="Harold - Static site generator"
+title="Node.js static site generator for Markdown and Handlebars"
+description="Harold is a Node.js static site generator for Markdown, Handlebars, and SCSS. Build blogs, docs, and landing pages as static HTML."
+metaTitle="Harold static site generator for Markdown and Handlebars"
 metaUrl="https://www.haroldjs.com"
 }}
 
 <div class="container">
   <section class="homepage-hero">
     <div class="homepage-hero-content">
-      <div class="homepage-kicker">Static sites without the ceremony</div>
-      <h1>Just publish<span class="homepage-lead-accent">!</span></h1>
+      <div class="homepage-kicker">Markdown and Handlebars static site generator</div>
+      <h1>Static sites without the ceremony<span class="homepage-lead-accent">.</span></h1>
       <p class="homepage-lead-subtitle">
-        Build blogs, docs, portfolios, and landing pages with Handlebars, Markdown, SCSS, and a ready-to-deploy static output.
+        Ship a blog, docs site, portfolio, or landing page in minutes: no React, no database, no server. Just Markdown, Handlebars, SCSS, and static HTML.
       </p>
       <div class="homepage-actions">
         <a class="homepage-primary-action" href="/docs/getting-started.html">Get started</a>
         <a class="homepage-secondary-action" href="#templates">View templates</a>
       </div>
+      <div class="homepage-trust-links" aria-label="Project links">
+        <a href="https://github.com/harold-js/create-harold-app">GitHub</a>
+        <a href="https://www.npmjs.com/package/create-harold-app">npm package</a>
+        <a href="https://github.com/harold-js/create-harold-app/blob/main/LICENSE">MIT license</a>
+      </div>
       <div class="homepage-badges" aria-label="Project highlights">
         <span>Markdown</span>
         <span>Handlebars</span>
-        <span>Search-ready templates</span>
-        <span>Static-host ready</span>
+        <span>Lunr search setup</span>
+        <span>Static hosting</span>
       </div>
     </div>
 
     <div class="homepage-lead-image">
-      <img src="/assets/images/harold-start.png" alt="Terminal showing Harold start commands" />
+      <img
+        src="/assets/images/harold-start.png"
+        width="680"
+        height="285"
+        alt="Harold CLI quick start commands for creating and previewing a static site"
+      />
     </div>
   </section>
 
@@ -63,7 +73,7 @@ metaUrl="https://www.haroldjs.com"
       <article class="homepage-feature">
         <div class="homepage-feature-mark">HB</div>
         <h3>Handlebars layouts</h3>
-        <p>Compose pages with templates, partials, and simple helper-driven lists.</p>
+        <p>Compose pages with templates, partials, and simple helper-powered lists.</p>
       </article>
       <article class="homepage-feature">
         <div class="homepage-feature-mark">CSS</div>
@@ -72,8 +82,30 @@ metaUrl="https://www.haroldjs.com"
       </article>
       <article class="homepage-feature">
         <div class="homepage-feature-mark">JS</div>
-        <h3>Template search</h3>
-        <p>Use the ready templates' Lunr-powered search setup for content-heavy sites.</p>
+        <h3>Search setup</h3>
+        <p>Ready templates include a Lunr-powered search setup for content-heavy sites.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="homepage-section homepage-why">
+    <div class="homepage-section-header">
+      <span class="homepage-section-kicker">Why Harold</span>
+      <h2>Choose plain static output when an app framework would be too much</h2>
+    </div>
+
+    <div class="homepage-why-grid">
+      <article>
+        <strong>Less runtime</strong>
+        <span>No database, server process, or client framework is required to serve the final site.</span>
+      </article>
+      <article>
+        <strong>Less lock-in</strong>
+        <span>Content stays in Markdown and templates stay in Handlebars, so the project remains easy to inspect.</span>
+      </article>
+      <article>
+        <strong>Less deploy friction</strong>
+        <span>The build produces static files you can publish on GitHub Pages, Cloudflare Pages, Netlify, Vercel, or any static host.</span>
       </article>
     </div>
   </section>
@@ -150,7 +182,7 @@ metaUrl="https://www.haroldjs.com"
         </p>
         <div class="homepage-quickstart-actions">
           <a class="homepage-primary-action" href="/docs/getting-started.html">Read the guide</a>
-          <a class="homepage-text-link" href="https://github.com/harold-js/create-harold-app">Github repository</a>
+          <a class="homepage-text-link" href="https://github.com/harold-js/create-harold-app">GitHub repository</a>
         </div>
       </div>
       <div class="homepage-command-panel" aria-label="Harold quick start commands">

@@ -9,17 +9,17 @@ tags:
   - docs
 ---
 
-Harold is a static site and blog generator based on Handlebars and Markdown. Let's see how it is built. Be sure to check [Getting started](/docs/getting-started.html) section first.
+Harold is a static site and blog generator based on Handlebars and Markdown. This guide explains how a Harold project is built. Be sure to check the [Getting started](/docs/getting-started.html) section first.
 
 ## Workflow
 
 With Harold, the workflow looks like this:
 
-  1. You work in the `src` directory, and Harold transforms everything into standard .css and .html files in the `build` directory.
-  2. You can prepare `partials`, `pages`, `posts/docs` and `assets` files.
-  3. You work with Handlebars and Markdown. So a little bit of knowledge of these two is required.
-  4. You work with a development server that runs at `localhost:3000`.
-  5. You will get all changes reflected in the browser after refreshing it.
+  1. You work in the `src` directory, and Harold transforms everything into standard `.css` and `.html` files in the `build` directory.
+  2. You prepare `partials`, `pages`, `posts` or `docs`, and `assets` files.
+  3. You work with Handlebars and Markdown, so a little knowledge of both is helpful.
+  4. You use a development server that runs at `localhost:3000`.
+  5. You refresh the browser to see your changes.
 
 ## Project Types
 
@@ -74,7 +74,7 @@ src/
 **Full structure:**
 ```bash
 src/
-├── posts/          # Blog posts in markdown
+├── posts/          # Blog posts in Markdown
 ├── blog-layouts/   # Post templates
 ├── pages/
 │   ├── index.hbs
@@ -159,7 +159,7 @@ Below is the `src` directory structure from the Default template:
 
 This makes Harold more flexible for different project types (documentation-only sites, minimal landing pages, etc.).
 
-`styles` and `assets` directories are self-explanatory. Here you can build your Scss structures and custom javascript logic. You can also save images here. All will be moved and compiled later.
+The `styles` and `assets` directories are for SCSS, custom JavaScript, images, and other frontend assets. Harold copies and compiles them into the output directory.
 
 `posts` and `pages` are places for actual content. You write pages with Handlebars markup and posts with Markdown. 
 
@@ -202,11 +202,11 @@ All compiles and lands in the `build` directory:
     └── main.css
 ```
 
-As you can see here, static website, ready to deploy.
+As you can see, the result is a static website that is ready to deploy.
 
 ## Pages and partials
 
-You will build pages using Handlebars templating engine. So everything possible with Handlebars should be possible also here. You can define your contents and split them into partials. Partial is a fragment of your HTML-like document.
+You build pages with the Handlebars templating engine, so most things possible with Handlebars are possible here too. You can define page content directly and split reusable fragments into partials. A partial is a fragment of your HTML-like document.
 
 ```handlebars
 <div class="container-full-width docs-layout" data-js-doc-content>
@@ -215,9 +215,9 @@ You will build pages using Handlebars templating engine. So everything possible 
     <h1>A quick intro to Harold JS</h1>
 ```
 
-`{{> docs-sidebar-left}}` here is nothing more than a separate `.hbs` file located in the `partials` directory. It will be injected precisely in this place in the code.
+`{{> docs-sidebar-left}}` is a separate `.hbs` file located in the `partials` directory. Harold injects it exactly at that place in the template.
 
-You can also use partials with parameters. For example we can use `head` partial (also located in `partials` directory) which looks like:
+You can also pass parameters to partials. For example, the `head` partial, also located in the `partials` directory, can be used like this:
 
 ```handlebars
 {{> head
@@ -232,7 +232,7 @@ You can also use partials with parameters. For example we can use `head` partial
 }}
 ```
 
-Handlebars engine will then inject all of these parameters into partial's placeholders. Head partial looks like:
+The Handlebars engine injects those parameters into the partial's placeholders. The `head` partial looks like this:
 
 ```handlebars
 <!DOCTYPE html>
@@ -256,13 +256,13 @@ Handlebars engine will then inject all of these parameters into partial's placeh
   <meta name="twitter:image" content="{{twitterImage}}" />
 ```
 
-In the end, everything is compiled to standard .html starting from the page file as a root file for html output.
+In the end, every page file is compiled to standard `.html` output.
 
 Read more in the Handlebars docs: [https://handlebarsjs.com/guide/](https://handlebarsjs.com/guide/)
 
 ## Markdown files
 
-Every single Markdown file is compiled into a separate .html file located in the `posts` directory (or different one if there is custom config file). The directory structure within `posts` is preserved in the output, so nested posts will maintain their subdirectory paths in the generated URLs. Every file defines a couple of parameters at the top of the file. It uses the Front Matter approach (Embedded YAML structured data at the top of Markdown documents).
+Every Markdown file is compiled into a separate `.html` file located in the `posts` directory, or in a different directory if you configure one. The directory structure inside `posts` is preserved in the output, so nested posts keep their subdirectory paths in generated URLs. Every file defines a few parameters at the top using front matter, which is YAML-style structured data embedded at the top of a Markdown document.
 
 ```markdown
 ---
@@ -272,20 +272,20 @@ publicationDate: '2021-05-01'
 tags:
   - learn
 ogTitle: "Harold Recipes - Static site generator"
-ogDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+ogDescription: "Ready-to-use recipes you can adapt for your custom template"
 ogImage: "https://www.haroldjs.com/assets/images/harold-start.png"
-ogUrl: "https://www.haroldjs.com/docs/recipes"
+ogUrl: "https://www.haroldjs.com/docs/recipes.html"
 twitterTitle: "Harold Recipes - Static site generator"
-twitterDescription: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+twitterDescription: "Ready-to-use recipes you can adapt for your custom template"
 twitterImage: "https://www.haroldjs.com/assets/images/harold-start.png"
-twitterUrl: "https://www.haroldjs.com/docs/recipes"
+twitterUrl: "https://www.haroldjs.com/docs/recipes.html"
 
 ---
 
-Rest of the markdown content here...
+Rest of the Markdown content here...
 ```
 
-You can add as many parameters there as you can, but Harold requires mandatory ones in every .md file. They are:
+You can add as many parameters as you need, but Harold requires these fields in every `.md` file:
 
 - `layout` - defines which blog layout to use
 - `title` - defines post title
@@ -314,7 +314,7 @@ coverImage: '/assets/images/cover.jpg'
 customField: 'Any custom data you need'
 ---
 
-Rest of the markdown content here...
+Rest of the Markdown content here...
 ```
 
 **Accessing custom fields in layouts:**
@@ -332,9 +332,9 @@ In your layout `.hbs` file, all front matter fields are available as variables:
 </div>
 ```
 
-In markdown files, you can also use standard HTML code. Of course, most of it. Some special scripting tags are removed when compiling. 
+In Markdown files, you can also use standard HTML. Some special scripting tags are removed during compilation.
 
-Since version 1.3.0, images in markdown automatically get optimized:
+Since version 1.3.0, images in Markdown automatically get optimized:
 - **Automatic dimensions** - Width and height attributes are added automatically to prevent layout shift (only for local files)
 - **Lazy loading** - Native `loading="lazy"` for better performance  
 - **Async decoding** - `decoding="async"` for non-blocking rendering
@@ -371,11 +371,11 @@ Alternatively, you can still use HTML:
 <div class="wide-content"><img src="/assets/img.png" alt="alt text" /></div>
 ```
 
-The query parameter approach is recommended as it keeps your markdown cleaner.
+The query parameter approach is recommended because it keeps your Markdown cleaner.
 
-Another predefined structure will be helpful when you need to embed some iframe-based content.
+Another predefined structure is useful when you need to embed iframe-based content.
 
-Since v1.3.0, you can use query parameters for cleaner markdown:
+Since v1.3.0, you can use query parameters for cleaner Markdown:
 
 ```html
 <iframe src="https://codepen.io/embed/xxxxx?style=embed" height="500"></iframe>
@@ -398,9 +398,9 @@ Both approaches will make your embedded content responsive. The `?style=embed` p
 
 ## Helpers
 
-Helpers are unique fragments of Handlebars code that maps javascript functions under the hood. So you can use loops, conditions, blocks, etc. The list of all built-in helpers is here: [https://handlebarsjs.com/guide/](https://handlebarsjs.com/guide/).
+Helpers are Handlebars functions exposed to templates. You can use them for loops, conditions, blocks, and other template logic. The list of built-in Handlebars helpers is here: [https://handlebarsjs.com/guide/](https://handlebarsjs.com/guide/).
 
-Besides that Harold offers it's own custom helpers which are:
+Harold also offers its own custom helpers:
 
 **responsiveImg** (since v1.3.0)
 
@@ -444,7 +444,7 @@ It can be used in every .hbs file.
 
 **postsList**
 
-This helper is very powerful when it comes to building post lists. It has a very good parametrization.
+This helper is useful for building post lists and gives you a lot of control over the output.
 
 ```handlebars
 {{postsList
@@ -456,7 +456,7 @@ This helper is very powerful when it comes to building post lists. It has a very
   noDate=true
   byTagName="featured"
   noReadMoreButton = false,
-  readMoreButtonLabel="Lets dive in!"
+  readMoreButtonLabel="Let's dive in!"
   noImage = false,
   dateFormat = 'yyyy-mm-dd',
 }}
@@ -482,7 +482,7 @@ This helper is very powerful when it comes to building post lists. It has a very
 {{relativePath 'styles/style.css'}}
 ```
 
-I would recommend always using this helper in .hbs files. Of course, if you are well aware of your paths, you can omit that. In Scss and Markdown files, you still need to use standard paths, if needed, relative ones. It will probably change in the future.
+We recommend using this helper in `.hbs` files. If you are fully aware of your paths, you can omit it. In SCSS and Markdown files, use standard paths, including relative paths when needed.
 
 **hostDirName**
 
@@ -490,15 +490,15 @@ I would recommend always using this helper in .hbs files. Of course, if you are 
 {{hostDirName}}
 ```
 
-It will return the previously defined subdirectory name in which the whole website is hosted. It is sometimes useful when you would like to get this name in your templates dynamically. In the default template, it is used to provide proper paths for the template's JavaScript logic. You probably won't need to use it much unless you write your own Harold template for many different projects.
+It returns the configured subdirectory name where the website is hosted. This is useful when you need that value dynamically in templates. In the default template, it provides paths for the template's JavaScript logic. You probably won't need to use it much unless you write your own Harold template for many different projects.
 
-There isn't a possibility to add custom Handlebars helpers, but it is in plans in the future.
+Custom Handlebars helpers are not supported yet, but they are planned for the future.
 
 ## SCSS files
 
-Harold uses Scss for styling. All when what can be done with Scss should also be possible here.
+Harold uses SCSS for styling. Anything you can do with SCSS should also be possible here.
 
-You can create many different structures. The Default template uses Scss imports to differentiate sections and tooling classes. For example, you'll find there `_utils.scss` file with predefined content formatting classes and whole sections like `_main-menu.scss`. All is then imported in the `main.scss` file.  
+You can create many different structures. The Default template uses SCSS imports to separate sections and utility classes. For example, you'll find a `_utils.scss` file with predefined content formatting classes and section files such as `_main-menu.scss`. Everything is then imported in the `main.scss` file.
 
 ```scss
 @import 'variables';
@@ -510,9 +510,9 @@ You can create many different structures. The Default template uses Scss imports
 @import 'homepage';
 ```
 
-As you can see, all files which we want to import should have the `_` prefix. This tells the compiler that it shouldn't create separate .css files from these.
+Files imported from `main.scss` should use the `_` prefix. This tells the compiler not to create separate `.css` files for them.
 
-Harold also uses [PostCSS](https://postcss.org/) and [Autoprefixer](https://www.npmjs.com/package/autoprefixer) out of the box. Since version 1.3.0, CSS is automatically minified using cssnano for optimal file sizes. For now there is no way to use custom plugins, but it is planned.
+Harold also uses [PostCSS](https://postcss.org/) and [Autoprefixer](https://www.npmjs.com/package/autoprefixer) out of the box. Since version 1.3.0, CSS is automatically minified using cssnano for smaller file sizes. Custom PostCSS plugins are not supported yet, but they are planned.
 
  ## Assets
 
@@ -532,11 +532,11 @@ See example of assets directory [here](https://github.com/harold-js/harold-templ
 
 ## Posts JSON data
 
-There is a special `posts.json` file located in the `jsonData` directory. It will be populated on every markdown file change, keeps data about all posts in JSON format. This file is quite essential because the whole search engine uses it. It is its primary purpose in the Default theme, but you can use it for many other use cases. For example, for loading some posts dynamically or creating `load more` functionality. It could have many different use cases.
+There is a special `posts.json` file in the `jsonData` directory. Harold updates it whenever Markdown files change, and it contains data for all posts in JSON format. Ready templates use this file for search, but you can also use it for dynamic post loading, "load more" behavior, or other custom JavaScript features.
 
 ## Host from a subdirectory
 
-Suppose you need to host your blog created using Harold from subdirectory. For example, `www.mywebsite.com/blog/` then you would need to configure `hostDirName` in the `.haroldrc` file. Add there the name of your subfolder. The second thing is that you need to be aware of your paths (posts links, images, styles, etc.). The default Harold's templates support relative paths by default. It uses the `relativePath` handlebars helper for that. So it should work well in both cases when hosted from root and subdirectory.
+If you need to host a Harold site from a subdirectory, such as `www.mywebsite.com/blog/`, configure `hostDirName` in the `.haroldrc` file with the name of that subfolder. You also need to be aware of paths for post links, images, styles, and other assets. The default Harold templates support relative paths through the `relativePath` Handlebars helper, so they should work when hosted from the root or from a subdirectory.
 
 
 [Next: Custom templates](/docs/custom-templates.html)

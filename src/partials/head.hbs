@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
-  <title>Harold - Static site generator - {{title}}</title>
+  <title>{{#if pageTitle}}{{pageTitle}}{{else}}{{metaTitle}}{{/if}}</title>
   <meta name="description" content="{{description}}">
   <meta name="author" content="Harold JS">
   <meta name="robots" content="{{#if noindex}}noindex, nofollow{{else}}index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1{{/if}}">
@@ -16,8 +16,8 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="{{metaTitle}}" />
   <meta property="og:description" content="{{description}}" />
-  <meta property="og:image" content="https://www.haroldjs.com/assets/images/ogimage.png" />
-  <meta property="og:image:alt" content="Harold - Static site generator" />
+  <meta property="og:image" content="{{#if ogImage}}{{ogImage}}{{else}}https://www.haroldjs.com/assets/images/ogimage.png{{/if}}" />
+  <meta property="og:image:alt" content="{{#if ogImageAlt}}{{ogImageAlt}}{{else}}Harold - Static site generator{{/if}}" />
   <meta property="og:url" content="{{metaUrl}}" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,39 +26,78 @@
   <meta name="twitter:title" content="{{metaTitle}}" />
   <meta name="twitter:description" content="{{description}}" />
   <meta name="twitter:url" content="{{metaUrl}}" />
-  <meta name="twitter:image" content="https://www.haroldjs.com/assets/images/ogimage.png" />
-  <meta name="twitter:image:alt" content="Harold - Static site generator" />
+  <meta name="twitter:image" content="{{#if ogImage}}{{ogImage}}{{else}}https://www.haroldjs.com/assets/images/ogimage.png{{/if}}" />
+  <meta name="twitter:image:alt" content="{{#if ogImageAlt}}{{ogImageAlt}}{{else}}Harold - Static site generator{{/if}}" />
   <meta name="generator" content="Harold" />
   <meta name="application-name" content="Harold" />
 
+  {{#unless noindex}}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.haroldjs.com/#organization",
+          "name": "Harold JS",
+          "url": "https://www.haroldjs.com/",
+          "logo": "https://www.haroldjs.com/assets/images/ogimage.png",
+          "sameAs": [
+            "https://github.com/harold-js/create-harold-app",
+            "https://www.npmjs.com/package/create-harold-app"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.haroldjs.com/#software",
+          "name": "Harold",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Any",
+          "url": "https://www.haroldjs.com/",
+          "description": "{{{description}}}",
+          "softwareHelp": "https://www.haroldjs.com/docs.html",
+          "codeRepository": "https://github.com/harold-js/create-harold-app",
+          "license": "https://github.com/harold-js/create-harold-app/blob/main/LICENSE",
+          "author": {
+            "@id": "https://www.haroldjs.com/#organization"
+          }
+        }
+      ]
+    }
+  </script>
+  {{/unless}}
+
+  {{#if docs}}
   <link rel="stylesheet"
       href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/stackoverflow-light.min.css">
+  {{/if}}
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://unpkg.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body>
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
   <header class="main-header">
     <div class="{{#if fullWidth}}container-full-width{{else}}container{{/if}}">
       <div class="main-header-container">
         <div class="main-logo">
-          <div class="main-logo-dot"></div><a href="/">Harold</a>
+          <div class="main-logo-dot"></div><a href="/index.html">Harold</a>
         </div>
         <nav class="main-menu">
           <div class="main-menu-list">
-            <div data-js-search class="main-menu-list-item">
+            <button type="button" data-js-search class="main-menu-list-item" aria-label="Search">
               <i class="gg-search"></i>
-            </div>
-            <div data-js-menu class="main-menu-list-item">
+            </button>
+            <button type="button" data-js-menu class="main-menu-list-item" aria-label="Open menu">
               <i class="gg-menu"></i>
-            </div>
+            </button>
           </div>
         </nav>
       </div>
     </div>
   </header>
 
-<div class="page">
+<div class="page" id="main-content" tabindex="-1">

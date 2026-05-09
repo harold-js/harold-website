@@ -18,57 +18,57 @@
 
   <!-- Docs -->
   <url>
-    <loc>https://www.haroldjs.com/docs/configuration-reference.html</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.haroldjs.com/docs/performance.html</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.haroldjs.com/docs/troubleshooting.html</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.haroldjs.com/docs/recipes.html</loc>
-    <lastmod>2021-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://www.haroldjs.com/docs/caveats.html</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.haroldjs.com/docs/configuration-reference.html</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.haroldjs.com/docs/getting-started.html</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.haroldjs.com/docs/guides.html</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.haroldjs.com/docs/performance.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.haroldjs.com/docs/recipes.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.haroldjs.com/docs/troubleshooting.html</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.haroldjs.com/docs/custom-templates.html</loc>
-    <lastmod>2021-04-29</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

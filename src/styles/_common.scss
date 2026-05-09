@@ -30,6 +30,10 @@
   top: 40px;
   right: 55px;
   cursor: pointer;
+  border: 0;
+  padding: 12px;
+  background-color: transparent;
+  color: variables.$color-main-light;
 
   .gg-close {
     transform: scale(2);

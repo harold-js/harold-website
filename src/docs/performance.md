@@ -65,7 +65,7 @@ Disable it if needed (not recommended):
 
 ### Automatic Image Optimization
 
-Images in markdown posts automatically get optimized for better Core Web Vitals scores.
+Images in Markdown posts automatically get optimized for better Core Web Vitals scores.
 
 **Automatic Features:**
 1. **Width & Height Attributes** - Prevents Cumulative Layout Shift (CLS)
@@ -74,7 +74,7 @@ Images in markdown posts automatically get optimized for better Core Web Vitals 
 
 **Example:**
 
-Input markdown:
+Input Markdown:
 ```markdown
 ![My image](assets/images/photo.jpg)
 ```
@@ -313,4 +313,3 @@ Your site will automatically benefit from:
 - ✅ Better Web Vitals scores
 
 [Next: Recipes](/docs/recipes.html)
-

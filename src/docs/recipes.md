@@ -1,7 +1,7 @@
 ---
 layout: 'docs'
 title: 'Recipes'
-description: "Ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template"
+description: "Ready-to-use recipes you can adapt for your custom template"
 metaTitle: "Harold Recipes - Static site generator"
 metaUrl: "https://www.haroldjs.com/docs/recipes.html"
 publicationDate: '2021-05-02'
@@ -9,7 +9,7 @@ tags:
   - learn
 ---
 
-Below are ready-to-use recipes. You can take them as inspiration or copy it as it is and use in your custom template.
+Below are ready-to-use recipes you can adapt for your custom template.
 
 ## Query Parameter Styling (v1.3.0+)
 
@@ -62,7 +62,7 @@ The `?style=vimeo` parameter ensures proper responsive sizing for Vimeo embeds.
 
 ## Featured post
 
-You can use `postsList` Handlebars helper with `perPageLimit` param set to 1. Then you can provide your wrapper `className` and style it as you need.
+You can use the `postsList` Handlebars helper with `perPageLimit` set to `1`. Then provide your wrapper `className` and style it as needed.
 
 ```handlebars
 {{postsList
@@ -74,13 +74,13 @@ You can use `postsList` Handlebars helper with `perPageLimit` param set to 1. Th
   noExcerpt=true
   noDate=true
   byTagName="featured"
-  readMoreButtonLabel="Lets dive in!"
+  readMoreButtonLabel="Let's dive in!"
 }}
 ```
 
 ## Posts categories
 
-You can use `postsList` Handlebars helper with `perPageLimit` param. You can use tags as categories. Posts will be divided into sections and listed by tag name.
+You can use the `postsList` Handlebars helper with `perPageLimit` and treat tags as categories. Posts will be divided into sections and listed by tag name.
 
 ```handlebars
 <div class="homepage-section homepage-section-bg">
@@ -116,7 +116,7 @@ More examples on [GitHub](https://github.com/harold-js/harold-template-default)
 
 ## Simple posts list
 
-You can use the `postsList` Handlebars helper with disabled most of its contents to achieve a simple posts list that can generate menus.
+You can use the `postsList` Handlebars helper with most content disabled to create a simple post list for menus.
 
 ```handlebars
 {{postsList
@@ -171,12 +171,12 @@ tags:
   - featured
 publicationDate: '2021-04-18'
 ogTitle: 'Harold is alive!'
-ogDescription: 'Harold is a static site generator based on Handlebars templating system and markdown'
-ogUrl: 'https://my-website.com/blog/doc1'
+ogDescription: 'Harold is a static site generator based on Handlebars templating and Markdown'
+ogUrl: 'https://my-website.com/blog/doc1.html'
 ogImage: 'https://my-website.com/assets/images/ogImage.png'
 twitterTitle: 'Harold is alive!'
-twitterDescription: 'Harold is a static site generator based on Handlebars templating system and markdown'
-twitterUrl: 'https://my-website.com/blog/doc1'
+twitterDescription: 'Harold is a static site generator based on Handlebars templating and Markdown'
+twitterUrl: 'https://my-website.com/blog/doc1.html'
 twitterImage: 'https://my-website.com/assets/images/ogImage.png'
 ---
 ```
@@ -185,7 +185,7 @@ More examples on [GitHub](https://github.com/harold-js/harold-template-default)
 
 ## Posts JSON data
 
-By default, you have access to JSON data with all posts. It is useful when you want to do something dynamic using JavaScript. For example, 'load more' functionality or search. The search system is implemented already in the default template. Here is an example:  
+By default, you have access to JSON data for all posts. It is useful when you want to do something dynamic with JavaScript, such as "load more" functionality or search. Some ready templates already include a search implementation. Here is an example:
 
 **Note:** For nested posts, the `fileName` field includes the relative path from the posts root. For example:
 - Root-level post: `"fileName": "example1.html"`

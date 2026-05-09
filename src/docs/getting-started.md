@@ -120,9 +120,9 @@ Harold will search up the directory tree for configuration in the following plac
 - a `.haroldrc.json`, `.haroldrc.yaml`, `.haroldrc.yml`, `.haroldrc.js`, or `.haroldrc.cjs` file
 - a `harold.config.js` or `harold.config.cjs` CommonJS module exporting an object
 
-For now, there isn't much to configure, but you can configure the directory for md files (by default `posts`) and the directory for md files layouts (by default `blog-layouts`). Quite helpful because these names are also used in urls. For example, by default, `/posts/name-of-the-post` (name of the .md file), but you might want to build the docs website and have `/docs/name-of-the-doc` (name of the .md file).
+For now, there are only a few options. You can configure the directory for Markdown files (`posts` by default) and the directory for Markdown layouts (`blog-layouts` by default). These names are also used in URLs. For example, Harold generates `/posts/name-of-the-post.html` by default, but for a documentation site you might prefer `/docs/name-of-the-doc.html`.
 
-You can also configure the name for output directory using `outputDirName` and if you want to host your site in subdirectory you would also need to add `hostDirName`.
+You can also configure the output directory with `outputDirName`. If you want to host your site in a subdirectory, add `hostDirName`.
 
 Since version 1.3.0, you can also configure HTML and CSS minification using `minifyHtml` and `minifyCss` options (both enabled by default for better performance).
 

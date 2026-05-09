@@ -91,7 +91,7 @@ function findDocs() {
         title: metadata.title || filename,
         priority: '0.8',
         changefreq: 'monthly',
-        lastmod: metadata.publicationDate || getFileLastModified(filepath),
+        lastmod: getFileLastModified(filepath),
       };
     })
     .sort(

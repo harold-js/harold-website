@@ -26,7 +26,7 @@ Harold starts searching from the `src/` directory and walks up to the project ro
 **Type:** `string`  
 **Default:** `'posts'`
 
-The directory name for markdown blog post files.
+The directory name for Markdown blog post files.
 
 **Example:**
 ```json
@@ -35,7 +35,7 @@ The directory name for markdown blog post files.
 }
 ```
 
-**Use Case:** Change to `docs` for documentation sites, or `articles` for article-based sites. This name is used in URLs (e.g., `/docs/article-name`).
+**Use Case:** Change to `docs` for documentation sites, or `articles` for article-based sites. This name is used in URLs (e.g., `/docs/article-name.html`).
 
 **Nested Posts:** You can organize posts in subdirectories within this directory. The directory structure is preserved in the output URLs. For example, `src/docs/category/article.md` becomes `/docs/category/article.html`. This is useful for organizing posts by category, topic, or date.
 
@@ -43,7 +43,7 @@ The directory name for markdown blog post files.
 **Type:** `string`  
 **Default:** `'blog-layouts'`
 
-The directory name for markdown file layout templates.
+The directory name for Markdown file layout templates.
 
 **Example:**
 ```json

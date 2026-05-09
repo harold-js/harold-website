@@ -22,6 +22,12 @@
       display: inline-block;
     }
   }
+
+  &:focus-within {
+    [data-js-doc-header-link] {
+      display: inline-block;
+    }
+  }
 }
 
 [data-js-doc-header-link] {
@@ -86,8 +92,10 @@
   height: 42px;
   align-items: center;
   justify-content: center;
+  border: 1px solid variables.$color-main-borders;
   border-radius: 8px;
   background-color: variables.$color-main-light;
+  color: variables.$color-main-dark;
   box-shadow: 0 12px 30px rgba(0, 23, 55, .12);
 
   @media screen and (max-width: 1024px) {
@@ -147,6 +155,12 @@
 
   a {
     color: variables.$color-main-contrast;
+  }
+
+  .docs-code-copy:focus-visible,
+  [data-js-doc-header-link]:focus-visible {
+    outline: 3px solid variables.$color-main-contrast;
+    outline-offset: 4px;
   }
 
   @media screen and (max-width: 1280px) {

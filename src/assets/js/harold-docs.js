@@ -68,6 +68,10 @@
       linkIconElement.classList.add('gg-link');
       anchorLinkElement.setAttribute('href', '#' + slugify(element.innerText));
       anchorLinkElement.setAttribute('data-js-doc-header-link', '');
+      anchorLinkElement.setAttribute(
+        'aria-label',
+        'Link to ' + element.innerText
+      );
       anchorLinkElement.appendChild(linkIconElement);
       anchorElement.setAttribute('id', slugify(element.innerText));
       anchorElement.setAttribute('data-js-doc-header-anchor', '');
