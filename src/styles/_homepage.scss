@@ -161,6 +161,7 @@
 .homepage-trust-links {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px 18px;
   margin: -6px 0 22px;
@@ -175,6 +176,15 @@
       color: variables.$color-main-contrast;
       text-decoration: underline;
     }
+  }
+}
+
+.homepage-trust-stars {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    display: block;
   }
 }
 
@@ -485,38 +495,6 @@
   display: block;
   margin-top: 4px;
   line-height: 1.5;
-}
-
-.homepage-why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-
-  article {
-    padding: 24px;
-    border: 1px solid variables.$color-main-borders;
-    border-radius: 8px;
-    background-color: variables.$color-main-light;
-  }
-
-  strong,
-  span {
-    display: block;
-  }
-
-  strong {
-    font-size: 20px;
-    font-weight: 900;
-    margin-bottom: 8px;
-  }
-
-  span {
-    line-height: 1.55;
-  }
-
-  @media screen and (max-width: 820px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .homepage-quickstart {
