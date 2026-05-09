@@ -240,9 +240,9 @@ Sometimes you don't want to build a blog, but let's say, documentation. There is
 
 In many cases, there is a need to add some custom files to the root of your website. You can do this using the optional `src/statics` directory. Example: `src/statics/robots.txt` will be placed in `build/robots.txt` next to your index.html file. You can also nest your directories like `src/statics/some-dir/some-dir/file.txt`. It will land in `build/some-dir/some-dir/file.txt`.
 
-## Github Pages hosting
+## GitHub Pages hosting
 
-If you want to host Harold's website under your main username (username.github.io), you would need to rename your output directory to supported by Github. It is the `docs` directory. You would need to create a `.haroldrc` file and put the output directory name there.
+If you want to host Harold's website under your main username (username.github.io), you would need to rename your output directory to supported by GitHub. It is the `docs` directory. You would need to create a `.haroldrc` file and put the output directory name there.
 
 ```bash
 {
@@ -252,7 +252,7 @@ If you want to host Harold's website under your main username (username.github.i
 
 Build your Harold app and push it to the repo. Remember to add the `.gitignore` file, and exclude `node_modules` but keep the output directory (`docs`).
 
-Configure  your Github Pages to take the source from the `docs` directory.
+Configure your GitHub Pages to take the source from the `docs` directory.
 
 Here is the quick walk-through demo on how to do that:
 
@@ -271,11 +271,11 @@ If you want to host Harold's website under the repository subdirectory name (use
 
 Check out demo: [github.com/juliancwirko/testing-github-pages](https://github.com/juliancwirko/testing-github-pages)
 
-## Netlify hosting
+## Git-based static hosting
 
-With Netlify, it is a little bit simpler. You just need to point to the Git branch and directory you want to deploy your site. You don't even need the source in the repo because Netlify will run the build scripts for you.
+With build-capable static hosts such as Cloudflare Pages, Netlify, Vercel, and similar services, deployment is usually simple. Point the service to your Git branch, set the build command, and choose the output directory. The service can run the build scripts for you and publish the generated static files.
 
-Here is the quick walk-through demo on how to do that:
+Here is an older quick walk-through demo using one of these services:
 
 <div class="embeded-media-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ZjeYgAgiHRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

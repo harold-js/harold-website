@@ -11,9 +11,51 @@
     const sidebarRight = document.querySelector('[data-js-doc-sidebar-right]');
     const sidebarLeftActiveMenuItemClass = 'js-sidebar-left-menu-active';
     const leftMenuItemClass = 'docs-articles-list--title';
+    const codeBlocks = docContents.querySelectorAll('pre > code');
 
     const slugify = function (string) {
       return encodeURIComponent(string.trim().toLowerCase().replace(/ /g, '-'));
+    };
+
+    const copyText = function (text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return Promise.resolve();
+    };
+
+    const buildCodeCopyButtons = function () {
+      codeBlocks.forEach(function (codeBlock) {
+        const pre = codeBlock.parentNode;
+        const copyButton = document.createElement('button');
+        copyButton.type = 'button';
+        copyButton.classList.add('docs-code-copy');
+        copyButton.innerText = 'Copy';
+
+        copyButton.addEventListener('click', function () {
+          copyText(codeBlock.innerText).then(function () {
+            copyButton.innerText = 'Copied';
+            copyButton.classList.add('js-copied');
+
+            setTimeout(function () {
+              copyButton.innerText = 'Copy';
+              copyButton.classList.remove('js-copied');
+            }, 1600);
+          });
+        });
+
+        pre.appendChild(copyButton);
+      });
     };
 
     // Builds header anchors
@@ -38,6 +80,7 @@
 
     // Iterates through all header in the doc
     headers.forEach(wrapHeader);
+    buildCodeCopyButtons();
 
     // Populate right sidebar headers list
     if (sidebarRight) {

@@ -188,7 +188,7 @@ function generateSitemap(docs) {
 function generateRedirects(docs) {
   const seen = new Set();
   const lines = [
-    '# Netlify redirects. Auto-generated - do not edit by hand.',
+    '# Redirect rules. Auto-generated - do not edit by hand.',
     '# Keep legacy URL mappings in generate-static.js.',
   ];
 

@@ -37,6 +37,7 @@
 
 .docs-layout {
   position: relative;
+  min-height: calc(100vh - #{variables.$size-header-sapace});
 }
 
 .docs-sidebar-left {
@@ -47,7 +48,7 @@
   top: variables.$size-header-height;
   bottom: 0;
   left: 0;
-  padding: 50px 30px;
+  padding: 42px 24px;
   background-color: variables.$color-main-contrast2;
   border-right: 1px solid variables.$color-main-borders;
   transition: transform .3s;
@@ -63,22 +64,34 @@
 }
 
 .docs-sidebar-left-header {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  letter-spacing: .08em;
+  margin: 24px 6px 12px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .docs-sidebar-left-menu-icon {
   display: none;
-  position: absolute;
-  left: 30px;
-  top: -30px;
+  position: fixed;
+  left: 24px;
+  top: calc(#{variables.$size-header-height} + 18px);
   z-index: variables.$z-index-docs-sidebar-left-menu-icon;
   cursor: pointer;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: variables.$color-main-light;
+  box-shadow: 0 12px 30px rgba(0, 23, 55, .12);
 
   @media screen and (max-width: 1024px) {
-    display: block;
+    display: flex;
   }
 }
 
@@ -86,7 +99,8 @@
   margin-left: variables.$size-docs-sidebar-left-width;
   margin-right: variables.$size-docs-sidebar-right-width;
   width: auto;
-  padding: 0 30px;
+  max-width: 980px;
+  padding: 0 46px 60px;
   line-height: 1.6;
 
   h1 {
@@ -96,11 +110,39 @@
     margin-bottom: 35px;
   }
 
-  h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 0;
     border-top: 1px solid variables.$color-main-borders;
     padding-top: 25px;
     margin-top: 35px;
+  }
+
+  p,
+  li {
+    font-size: 16px;
+  }
+
+  pre {
+    position: relative;
+    margin: 24px 0;
+  }
+
+  pre code.hljs {
+    border: 1px solid variables.$color-main-borders;
+    border-radius: 8px;
   }
 
   a {
@@ -113,6 +155,7 @@
 
   @media screen and (max-width: 1024px) {
     margin-left: 0;
+    padding: 0 30px 60px;
   }
 }
 
@@ -122,13 +165,13 @@
 
 .docs-sidebar-right {
   width: variables.$size-docs-sidebar-right-width;
-  max-height: 100%;
+  max-height: calc(100vh - #{variables.$size-header-height} - 60px);
   overflow-y: auto;
   position: fixed;
   top: variables.$size-header-height;
   margin-top: 30px;
   right: 0;
-  padding: 10px 0;
+  padding: 10px 0 18px;
   border-left: 1px solid variables.$color-main-borders;
   line-height: 1.6;
   font-weight: 400;
@@ -149,7 +192,7 @@
 }
 
 .docs-sidebar-right-item {
-  padding: 0 25px;
+  padding: 4px 25px;
   position: relative;
 
   &.js-docs-active-header {
@@ -177,20 +220,43 @@
 }
 
 .docs-articles-list {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .docs-articles-list--title {
   font-size: 14px;
-  line-height: 1.3;
-  margin-bottom: 10px;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  position: relative;
 
   a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 7px;
     color: inherit;
     text-decoration: none;
+    transition: background-color .2s, color .2s;
+
+    &:hover {
+      background-color: rgba(variables.$color-main-contrast, .08);
+      color: variables.$color-main-contrast;
+    }
 
     &.js-sidebar-left-menu-active {
       color: variables.$color-main-contrast;
+      background-color: rgba(variables.$color-main-contrast, .1);
+      font-weight: 600;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        bottom: 9px;
+        left: 0;
+        width: 3px;
+        border-radius: 999px;
+        background-color: variables.$color-main-contrast;
+      }
     }
   }
 }
@@ -200,8 +266,38 @@
   position: relative;
 
   &:after {
-    content: "\27A4";
+    content: "";
     position: absolute;
-    right: 0;
+    right: 10px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid variables.$color-main-contrast;
+    border-right: 2px solid variables.$color-main-contrast;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.docs-code-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(variables.$color-main-dark, .16);
+  border-radius: 999px;
+  background-color: rgba(variables.$color-main-light, .92);
+  color: variables.$color-main-dark;
+  font-family: variables.$font-family-main;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+
+  &:hover,
+  &.js-copied {
+    color: variables.$color-main-light;
+    border-color: variables.$color-main-contrast;
+    background-color: variables.$color-main-contrast;
   }
 }

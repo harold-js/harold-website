@@ -319,7 +319,7 @@ Markdown like `**bold**` or `# Heading` not rendering.
 ### Build succeeds locally but fails on hosting
 
 **Symptoms:**
-`npm run build` works locally but fails on Netlify/Vercel/GitHub Actions.
+`npm run build` works locally but fails on your static host or CI provider.
 
 **Solution:**
 1. **Check Node version:** Ensure hosting uses Node 24+
