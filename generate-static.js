@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const DOCS_DIR = 'src/docs';
 const OUTPUT_FILE = 'src/statics/sitemap.xml';
@@ -43,6 +44,17 @@ function getToday() {
 function getFileLastModified(filepath) {
   if (!fs.existsSync(filepath)) {
     return getToday();
+  }
+
+  try {
+    const date = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cs', '--', filepath],
+      { encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'] }
+    ).trim();
+    if (date) return date;
+  } catch (_) {
+    // git not available or file not tracked — fall through to mtime
   }
 
   const stats = fs.statSync(filepath);
@@ -91,7 +103,7 @@ function findDocs() {
         title: metadata.title || filename,
         priority: '0.8',
         changefreq: 'monthly',
-        lastmod: metadata.publicationDate || getFileLastModified(filepath),
+        lastmod: getFileLastModified(filepath),
       };
     })
     .sort(
@@ -188,7 +200,7 @@ function generateSitemap(docs) {
 function generateRedirects(docs) {
   const seen = new Set();
   const lines = [
-    '# Netlify redirects. Auto-generated - do not edit by hand.',
+    '# Redirect rules. Auto-generated - do not edit by hand.',
     '# Keep legacy URL mappings in generate-static.js.',
   ];
 

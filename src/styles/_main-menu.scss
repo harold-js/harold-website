@@ -57,15 +57,23 @@
   justify-content: center;
   cursor: pointer;
   padding-top: 10px;
-  
+
   a {
     color: variables.$color-main-light;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 20px;
   }
 
   i {
     --ggs: 2;
   }
+}
+
+.main-menu-overlay-brand-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
 }

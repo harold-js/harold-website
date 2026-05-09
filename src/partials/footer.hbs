@@ -1,22 +1,26 @@
   </div>
   <footer class="main-footer">
     Harold Docs - we don't use cookies, and we don't track anything here.
-    <a href="/docs.html" class="main-footer-link">About</a>
+    <a href="/docs.html" class="main-footer-link">Docs home</a>
   </footer>
 
   {{> search-overlay}}
   {{> main-menu-overlay}}
   {{> go-top-btn}}
 
+  {{#if docs}}
   <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
   <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/languages/handlebars.min.js"></script>
   <script>hljs.highlightAll();</script>
+  {{/if}}
   <script src="https://unpkg.com/lunr/lunr.js"></script>
   <script src="/assets/js/harold.js"></script>
   <script src="/assets/js/harold-search.js"></script>
   <script src="/assets/js/harold-main-menu.js"></script>
   <script src="/assets/js/harold-scroll-top.js"></script>
+  {{#if docs}}
   <script src="/assets/js/harold-docs.js"></script>
+  {{/if}}
 </body>
 
 </html>

@@ -1,33 +1,190 @@
 {{> head
-title="Blogs, portfolios, documentation sites"
-description="Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates"
-metaTitle="Harold - Static site generator"
+description="Harold is a Node.js static site generator for Markdown, Handlebars, and SCSS. Build blogs, docs, and landing pages as static HTML."
+metaTitle="Harold static site generator for Markdown and Handlebars"
 metaUrl="https://www.haroldjs.com"
 }}
 
 <div class="container">
-  <div class="homepage-lead">
-    <h1>Just publish<span class="homepage-lead-accent">!</span></h1>
-    <div class="homepage-lead-subtitle">
-      With Harold, creating your static sites is much simpler and quicker!
+  <section class="homepage-hero">
+    <div class="homepage-hero-content">
+      <div class="homepage-kicker">Markdown and Handlebars static site generator</div>
+      <h1>Static sites without the ceremony<span class="homepage-lead-accent">.</span></h1>
+      <p class="homepage-lead-subtitle">
+        Ship a blog, docs site, portfolio, or landing page in minutes: no React, no database, no server. Just Markdown, Handlebars, SCSS, and static HTML.
+      </p>
+      <div class="homepage-actions">
+        <a class="homepage-primary-action" href="/docs/getting-started.html">Get started</a>
+        <a class="homepage-secondary-action" href="#templates">View templates</a>
+      </div>
+      <div class="homepage-trust-links" aria-label="Project links">
+        <a class="homepage-trust-stars" href="https://github.com/harold-js/create-harold-app">
+          <img
+            src="https://img.shields.io/github/stars/harold-js/create-harold-app?style=social&label=Star"
+            alt="GitHub stars for harold-js/create-harold-app"
+            width="92"
+            height="20"
+            loading="lazy"
+          />
+        </a>
+        <a href="https://github.com/harold-js/create-harold-app">GitHub</a>
+        <a href="https://www.npmjs.com/package/create-harold-app">npm package</a>
+        <a href="https://github.com/harold-js/create-harold-app/blob/main/LICENSE">MIT license</a>
+      </div>
+      <div class="homepage-badges" aria-label="Project highlights">
+        <span>Markdown</span>
+        <span>Handlebars</span>
+        <span>Lunr search setup</span>
+        <span>Static hosting</span>
+      </div>
     </div>
-    <div class="homepage-lead-subtitle">
-      Blogs, landing pages, portfolios, documentation sites - start with ready-to-use templates.
-    </div>
+
     <div class="homepage-lead-image">
-      <img src="/assets/images/harold-start.png" alt="Harold start image" />
+      <img
+        src="/assets/images/harold-start.png"
+        width="680"
+        height="285"
+        alt="Harold CLI quick start commands for creating and previewing a static site"
+      />
     </div>
-    <div class="homepage-docs-button-section">
-      <a href="/docs/getting-started.html">Documentation</a>
+  </section>
+
+  <section class="homepage-section homepage-principles">
+    <div class="homepage-principle">
+      <span class="homepage-principle-mark">01</span>
+      <strong>Content stays portable</strong>
+      <span>Markdown files, front matter, and standard HTML output.</span>
     </div>
-    <div>
-      Demos of available templates: 
-      <a href="https://haroldjs-default-demo.netlify.app/" class="homepage-link">Default</a> | <a href="https://haroldjs-docs-demo.netlify.app/" class="homepage-link">Docs</a> | <a href="https://haroldjs-bare-demo.netlify.app/" class="homepage-link">Bare</a>
+    <div class="homepage-principle">
+      <span class="homepage-principle-mark">02</span>
+      <strong>Templates stay familiar</strong>
+      <span>Handlebars partials and layouts instead of a heavy app shell.</span>
     </div>
-    <div>
-      License: MIT | <a href="https://github.com/harold-js/create-harold-app" class="homepage-link">Github</a>
+    <div class="homepage-principle">
+      <span class="homepage-principle-mark">03</span>
+      <strong>Deploy stays simple</strong>
+      <span>Build static files and host them anywhere.</span>
     </div>
-  </div>
+  </section>
+
+  <section class="homepage-section">
+    <div class="homepage-section-header">
+      <span class="homepage-section-kicker">What you get</span>
+      <h2>A small toolchain for practical websites</h2>
+    </div>
+
+    <div class="homepage-feature-grid">
+      <article class="homepage-feature">
+        <div class="homepage-feature-mark">MD</div>
+        <h3>Markdown content</h3>
+        <p>Write pages and docs as plain files with front matter metadata.</p>
+      </article>
+      <article class="homepage-feature">
+        <div class="homepage-feature-mark">HB</div>
+        <h3>Handlebars layouts</h3>
+        <p>Compose pages with templates, partials, and simple helper-powered lists.</p>
+      </article>
+      <article class="homepage-feature">
+        <div class="homepage-feature-mark">CSS</div>
+        <h3>SCSS styling</h3>
+        <p>Keep styling close to the site without adding a full frontend stack.</p>
+      </article>
+      <article class="homepage-feature">
+        <div class="homepage-feature-mark">JS</div>
+        <h3>Search setup</h3>
+        <p>Ready templates include a Lunr-powered search setup for content-heavy sites.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="homepage-section" id="templates">
+    <div class="homepage-section-header">
+      <span class="homepage-section-kicker">Templates</span>
+      <h2>Start from the shape that matches your site</h2>
+    </div>
+
+    <div class="homepage-template-grid">
+      <a class="homepage-template" href="https://haroldjs-default-demo.netlify.app/">
+        <span class="homepage-template-preview homepage-template-preview-default" aria-hidden="true">
+          <span class="homepage-template-window-bar"></span>
+          <span class="homepage-template-canvas">
+            <span class="homepage-template-nav"></span>
+            <span class="homepage-template-hero-line"></span>
+            <span class="homepage-template-hero-line homepage-template-hero-line-short"></span>
+            <span class="homepage-template-button"></span>
+            <span class="homepage-template-card-row">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </span>
+        <span class="homepage-template-title">Default</span>
+        <span class="homepage-template-text">A classic website and blog starter.</span>
+      </a>
+      <a class="homepage-template" href="https://haroldjs-docs-demo.netlify.app/">
+        <span class="homepage-template-preview homepage-template-preview-docs" aria-hidden="true">
+          <span class="homepage-template-window-bar"></span>
+          <span class="homepage-template-docs-canvas">
+            <span class="homepage-template-docs-nav">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="homepage-template-docs-content">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="homepage-template-docs-toc">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </span>
+        <span class="homepage-template-title">Docs</span>
+        <span class="homepage-template-text">A documentation layout with generated navigation.</span>
+      </a>
+      <a class="homepage-template" href="https://haroldjs-bare-demo.netlify.app/">
+        <span class="homepage-template-preview homepage-template-preview-bare" aria-hidden="true">
+          <span class="homepage-template-window-bar"></span>
+          <span class="homepage-template-bare-canvas"></span>
+        </span>
+        <span class="homepage-template-title">Bare</span>
+        <span class="homepage-template-text">A minimal starting point for custom builds.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="homepage-section homepage-quickstart">
+    <div class="homepage-quickstart-inner">
+      <div class="homepage-quickstart-copy">
+        <span class="homepage-section-kicker">Quick start</span>
+        <h2>From empty folder to local preview</h2>
+        <p>
+          Install a starter, run the dev server, and deploy the generated static files wherever you already host websites.
+        </p>
+        <div class="homepage-quickstart-actions">
+          <a class="homepage-primary-action" href="/docs/getting-started.html">Read the guide</a>
+          <a class="homepage-text-link" href="https://github.com/harold-js/create-harold-app">GitHub repository</a>
+        </div>
+      </div>
+      <div class="homepage-command-panel" aria-label="Harold quick start commands">
+        <div class="homepage-command-panel-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ol>
+          <li><code>npm init harold-app@latest my-website</code></li>
+          <li><code>cd my-website</code></li>
+          <li><code>npm start</code></li>
+        </ol>
+      </div>
+    </div>
+  </section>
 </div>
 
 {{> footer}}

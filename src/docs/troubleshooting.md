@@ -35,7 +35,7 @@ Missing Front Matter keys for example.md. Required keys are: layout, title, publ
 ```
 
 **Solution:**
-Ensure all markdown files have required front matter fields:
+Ensure all Markdown files have required front matter fields:
 
 ```markdown
 ---
@@ -45,7 +45,7 @@ publicationDate: '2025-12-20'
 ---
 ```
 
-All three fields are **required** for every markdown file.
+All three fields are **required** for every Markdown file.
 
 ---
 
@@ -220,7 +220,7 @@ Paths starting with `/` don't work.
 **Solution:**
 - In `.hbs` files: Use `relativePath` helper
 - In `.scss` files: Use relative paths or configure `hostDirName`
-- In markdown: Use paths relative to public directory
+- In Markdown: Use paths relative to the public directory
 
 ---
 
@@ -261,7 +261,7 @@ Build takes minutes instead of seconds.
 
 **Solution:**
 1. **Check image sizes:** Compress large images before adding
-2. **Reduce markdown files:** Split large posts into smaller ones
+2. **Reduce Markdown files:** Split large posts into smaller ones
 3. **Check for infinite loops:** Review custom Handlebars helpers
 4. **Update harold-scripts:** Newer versions have performance improvements
 
@@ -288,13 +288,13 @@ Page takes long to load in browser.
 
 ## Markdown Issues
 
-### HTML in markdown not rendering
+### HTML in Markdown not rendering
 
 **Symptoms:**
 HTML tags appear as text instead of rendering.
 
 **Solution:**
-Harold supports raw HTML in markdown by default. If not working:
+Harold supports raw HTML in Markdown by default. If not working:
 1. **Check for special characters:** Ensure `<` and `>` aren't escaped
 2. **Verify tag support:** Some script tags are sanitized for security
 3. **Use allowed tags:** Check sanitization schema in harold-scripts
@@ -319,7 +319,7 @@ Markdown like `**bold**` or `# Heading` not rendering.
 ### Build succeeds locally but fails on hosting
 
 **Symptoms:**
-`npm run build` works locally but fails on Netlify/Vercel/GitHub Actions.
+`npm run build` works locally but fails on your static host or CI provider.
 
 **Solution:**
 1. **Check Node version:** Ensure hosting uses Node 24+

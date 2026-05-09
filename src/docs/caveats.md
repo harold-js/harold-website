@@ -25,9 +25,9 @@ You can change the Markdown posts directory name using `.haroldrc` config. See t
 
 There is no simple built-in way to structure a multilingual Harold site yet. Nested posts help organize Markdown content, but pages are still flat, so the quickest solution is still to host separate Harold instances in subfolders of the main website. For example: `www.myhost.com/en`.
 
-## Scss, PostCSS and Handlebars customization
+## SCSS, PostCSS, and Handlebars customization
 
-Harold doesn't provide any customization for Scss, PostCSS, and Handlebars. It will be possible to some extent in the future. For now, when it comes to PostCSS, we use only Autoprefixer, and you can define browser support in the package.json file (see how to do this in Autoprefixer docs).
+Harold does not expose custom SCSS, PostCSS, or Handlebars configuration yet. For now, PostCSS runs Autoprefixer only, and you can define browser support in the package.json file. See the Autoprefixer docs for details.
 
 In most cases, the current configuration is good enough.
 
@@ -39,7 +39,7 @@ It is something for further research for sure.
 
 ## Markdown tags
 
-Harold supports the default set of Markdown tags. Since version 1.3.0, Harold includes a custom markdown processing plugin that enables cleaner syntax for common layouts:
+Harold supports the default set of Markdown tags. Since version 1.3.0, Harold includes a custom Markdown processing plugin that enables cleaner syntax for common layouts:
 
 **Query Parameter Styling (v1.3.0+):**
 - `![image](photo.jpg?style=wide)` - Full-width images

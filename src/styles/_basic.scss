@@ -17,6 +17,38 @@ body {
   background-color: variables.$color-main-light;
 }
 
+.skip-to-content {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: variables.$z-index-full-screen-overlay + 1;
+  transform: translateY(-140%);
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: variables.$color-main-dark;
+  color: variables.$color-main-light;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s;
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
+a,
+button,
+input {
+  &:focus-visible {
+    outline: 3px solid variables.$color-main-contrast;
+    outline-offset: 4px;
+  }
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 ::selection {
   color: variables.$color-main-light;
   background: variables.$color-main-contrast;
@@ -86,6 +118,12 @@ pre {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 8px;
+  background-color: transparent;
+  color: variables.$color-main-dark;
+  font: inherit;
   user-select: none;
 }
 
