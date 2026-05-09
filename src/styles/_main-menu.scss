@@ -57,11 +57,13 @@
   justify-content: center;
   cursor: pointer;
   padding-top: 10px;
-  
+
   a {
     color: variables.$color-main-light;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 20px;
   }
 
@@ -70,8 +72,8 @@
   }
 }
 
-.main-menu-overlay-social-text {
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 0;
+.main-menu-overlay-brand-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
 }

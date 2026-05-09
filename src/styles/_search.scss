@@ -36,6 +36,10 @@
   outline: none;
   border-bottom: 5px solid variables.$color-main-light;
 
+  &:focus-visible {
+    outline: none;
+  }
+
   &::placeholder {
     color: variables.$color-main-light;
   }

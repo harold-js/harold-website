@@ -45,14 +45,14 @@
   font-weight: 900;
   letter-spacing: .08em;
   text-transform: uppercase;
+}
 
-  &:before {
-    content: "";
-    display: block;
-    width: 9px;
-    height: 9px;
-    background-color: variables.$color-main-contrast;
-  }
+.homepage-section-kicker:before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: variables.$color-main-contrast;
 }
 
 .homepage-lead-subtitle {
