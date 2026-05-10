@@ -2,13 +2,16 @@
 @use "sass:color";
 
 .homepage-hero {
-  min-height: min(760px, calc(100vh - #{variables.$size-header-sapace} - 30px));
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  align-content: center;
-  gap: 44px;
+  align-content: start;
   text-align: center;
-  padding-bottom: 70px;
+  padding: 28px 0 72px;
+
+  @media screen and (min-width: 900px) {
+    padding-top: 56px;
+    padding-bottom: 86px;
+  }
 }
 
 .homepage-hero-content {
@@ -64,23 +67,6 @@
 
   @media screen and (max-width: 600px) {
     font-size: 18px;
-  }
-}
-
-.homepage-lead-image {
-  margin: 0 auto;
-
-  img {
-    display: block;
-    width: min(680px, 100%);
-    height: auto;
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 30px 60px rgba(0, 23, 55, .18);
-  }
-
-  @media screen and (max-width: 560px) {
-    width: 100%;
   }
 }
 
@@ -197,6 +183,32 @@
 .homepage-section {
   padding: 68px 0;
   border-top: 1px solid variables.$color-main-borders;
+}
+
+.homepage-section-templates {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 78px 30px 84px;
+  background-color: #fbfcfd;
+  border-bottom: 1px solid variables.$color-main-borders;
+
+  > .homepage-section-header,
+  > .homepage-template-grid {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > .homepage-section-header h2 {
+    max-width: 720px;
+  }
+
+  @media screen and (max-width: 760px) {
+    padding-top: 64px;
+    padding-bottom: 70px;
+  }
 }
 
 .homepage-section-header {
@@ -502,6 +514,7 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 76px 30px;
+  border-top: 0;
   background-color: variables.$color-main-contrast2;
 }
 
